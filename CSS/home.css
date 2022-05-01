@@ -104,3 +104,11 @@ button {
     border-radius: 15px;
     font-size: 1rem;
 }
+
+/* remove unordered list bullets */
+.developed-by-section ul {
+    margin: 20px 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: var(--text-size);
+}
