@@ -5,6 +5,8 @@
     --lime-green: #00C41F;
     --eerie-black: #13181B;
     --silver: #C4C4C4;
+
+    --text-size: 1.3rem;
 }
 
 /*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
@@ -43,4 +45,18 @@ nav {
     border-radius: 15px;
     padding: 5px;
     margin: 10px;
+}
+
+main {
+    /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
+    flex-grow: 1;
+    
+    font-size: var(--text-size);
+    padding: 30px;
+
+    /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
