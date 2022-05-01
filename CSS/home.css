@@ -10,7 +10,7 @@
 /*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
 .dark-theme {
     --bg-color: var(--eerie-black);
-    --nav-bg-color: var(var(--bitter-lime));
+    --nav-bg-color: var(--bitter-lime);
     --text: var(--platinum);
     --text-alternative: var(--eerie-black);
 }
@@ -20,4 +20,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    height: 100vh;
+
+    /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    /* using flexbox to align the navbar items in a horizontal line with even spaces inbetween */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: var(--nav-bg-color);
+    color: var(--text-alternative);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
 }
