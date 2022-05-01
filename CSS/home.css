@@ -1,0 +1,23 @@
+:root {
+    --platinum: #E9EBEA;
+    --arctic-lime: #D2FF00;
+    --bitter-lime: #B3F700;
+    --lime-green: #00C41F;
+    --eerie-black: #13181B;
+    --silver: #C4C4C4;
+}
+
+/*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
+.dark-theme {
+    --bg-color: var(--eerie-black);
+    --nav-bg-color: var(var(--bitter-lime));
+    --text: var(--platinum);
+    --text-alternative: var(--eerie-black);
+}
+
+/* This catch-all at the beginning removes all default margin and padding spacings to allow for maximum customizability later. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
