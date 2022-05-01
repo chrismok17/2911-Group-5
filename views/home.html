@@ -1,40 +1,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/home.css">
     <script defer src="CSS/app.js"></script>
 </head>
+<body class="dark-theme">
+    <nav>
+        <a href="./home.html"><img src="../Assets/images/logo.png" alt="MovieTracker Logo"></a>
+        <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
+        <a href="https://github.com/chrismok17/2911-Group-5"><img src="../Assets/images/GitHubLogo.png" alt="GitHub Repository Logo and Link"></a>
+    </nav>
+    
+    <main>
+        <h2>Welcome to Our Movie Tracker API</h1>
 
-<header>
-    <div>
-        <h1>MovieTracker</h1>
-        <img></img>
-    </div>
-</header>
-
-<body>
-    <div>
-        <div>
-            <input type="text">
+        <form action="#">
+            <input id="usernameBox" type="text" placeholder="Enter Username">
             <button>Login</button>
-        </div>
-        
-        <form>
-            <h2>Welcome to Our Movie Tracker API</h2>
-
-            <p>This API is used to keep a watchlist of the movies you want to watch, and will allow you to View, Add, Edit, and delete Movies off your watchlist!</p>
-            
-            <div>
-                <h3>This Project is developed by:</h3>
-                <p>
-                    Desmond Ho <br>
-                    Cloue Macadangdang <br>
-                    Christopher Mok <br>
-                    Tamim Hemat <br>
-                    Gabriel Walsh <br>
-                    Morteza Rahimi-Mediseh
-                </p>
-            </div>
         </form>
-    </div>
+
+        <p>This API is used to keep a watchlist of the movies you want to watch, and <br> will allow you to View, Add, Edit, and
+            delete Movies off your watchlist!</p>
+
+        <div class="developed-by-section">
+            <h3>This Project is developed by:</h2>
+            
+            <ul>
+                <li>Desmond Ho</li>
+                <li>Cloue Macadangdang</li>
+                <li>Christopher Mok</li>
+                <li>Tamim Hemat</li>
+                <li>Gabriel Walsh</li>
+                <li>Morteza Rahimi-Mediseh</li>
+            </ul>
+        </div>
+    </main>
 </body>
