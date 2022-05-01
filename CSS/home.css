@@ -1,0 +1,114 @@
+:root {
+    --platinum: #E9EBEA;
+    --arctic-lime: #D2FF00;
+    --bitter-lime: #B3F700;
+    --lime-green: #00C41F;
+    --eerie-black: #13181B;
+    --silver: #C4C4C4;
+
+    --nav-text-size: 1.4rem;
+    --text-size: 1.2rem;
+    --header-size: 1.7rem;
+}
+
+/*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
+.dark-theme {
+    --bg-color: var(--eerie-black);
+    --nav-bg-color: var(--bitter-lime);
+    --text: var(--platinum);
+    --text-alternative: var(--eerie-black);
+}
+
+/* This catch-all at the beginning removes all default margin and padding spacings to allow for maximum customizability later. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+    /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    /* using flexbox to align the navbar items in a horizontal line with even spaces inbetween */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: var(--nav-bg-color);
+    color: var(--text-alternative);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+}
+
+main {
+    /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
+    flex-grow: 1;
+    
+    padding: 50px;
+
+    /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: var(--nav-text-size);
+}
+h2, h3 {
+    font-size: var(--header-size);
+}
+p {
+    font-size: var(--text-size);
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+}
+
+#usernameBox {
+    margin: 0 10px 0 0;
+    background-color: var(--silver);
+    text-align: center;
+    padding: 16px 55px;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+/* change placeholder text color from default light gray. */
+::placeholder {
+    color: var(--text-alternative);
+    font-size: 1rem;
+}
+
+button {
+    margin: 0 0 0 10px;
+    background-color: var(--bitter-lime);
+    border: none;
+    color: var(--text-alternative);
+    padding: 16px 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+/* remove unordered list bullets */
+.developed-by-section ul {
+    margin: 20px 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: var(--text-size);
+}
