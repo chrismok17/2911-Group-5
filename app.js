@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 8080;
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
+require("dotenv").config();
 
 // Tell the app to use /CSS directory for CSS files
 app.use("/CSS", express.static(path.join(__dirname, "CSS")));
@@ -16,16 +16,16 @@ app.use("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/home.html"));
 });
 
-// Connect to mongoDB
-mongoose.connect(
-  "mongodb+srv://Filet-admin:pizza567@cluster0.kcpfg.mongodb.net/courses"
-);
-const db = mongoose.connection;
-db.once("open", () => {
-  console.log("Connected to Database");
-});
+// Routers
 
 // Tell app to listen on port
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+});
+
+// Connect to Mongo
+mongoose.connect(process.env.DB_Connection);
+const db = mongoose.connection;
+db.once("open", () => {
+  console.log("Connected to MongoDB");
 });
