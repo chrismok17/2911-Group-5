@@ -22,7 +22,7 @@ app.listen(port, () => {
 });
 
 // Connect to Mongo
-mongoose.connect(process.env.DB_Connection);
+mongoose.connect(process.env.DB_CONNECTION);
 const db = mongoose.connection;
 db.once("open", () => {
   console.log("Connected to MongoDB");
