@@ -9,6 +9,7 @@
     --nav-text-size: 1.4rem;
     --text-size: 1.2rem;
     --header-size: 1.7rem;
+    --small-text-size: 0.9rem;
 }
 
 /*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
@@ -75,7 +76,17 @@ p {
 
 form {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+}
+
+#usernameBoxAndBtn {
+    display: flex;
+    justify-content: center;
+}
+
+#loginText {
+    padding: 10px 0 0 0;
+    font-size: var(--small-text-size);
 }
 
 #usernameBox {
