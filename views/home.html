@@ -16,10 +16,11 @@
     <main>
         <h2>Welcome to Our Movie Tracker API</h1>
 
-        <form action="#">
+        <form action="/tracker/view" method="POST">
+            
             <div id="usernameBoxAndBtn">
-                <input id="usernameBox" type="text" placeholder="Enter Username">
-                <button>Login</button>
+                <input name="username"id="usernameBox" type="text" placeholder="Enter Username" value="">
+                <button type="submit">Login</button>
             </div>
             <p id="loginText">Enter your username; An account will be created automatically if you do not have one.</p>
         </form>
