@@ -72,3 +72,35 @@ describe("app.js API", () => {
         });
     });
 });
+
+//Testing unsuccessful Mongo entry creation
+describe("Bad entry", () => {
+    it("This entry is bad but we caught the error", () => {
+        function bad_entry() {
+            const badMovie = new Movie({
+            username: 55,
+            name: 45, 
+            genre: 33, 
+            release_date: "bruh", 
+            status: "kekw"});
+            
+            const good_entry = {
+                username : String,
+                name : String,
+                genre : String,
+                release_date: Number,
+                status: Boolean
+            }
+
+            for(let i in badMovie) {
+                if(typeof(badMovie[i]) == typeof(good_entry[i])) {
+                    continue
+                }
+                else {
+                    throw new Error("Bad entry")
+                }
+            };
+        };
+        chai.assert.throws(bad_entry, "Bad entry");
+    });
+});
