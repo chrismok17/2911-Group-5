@@ -104,3 +104,96 @@ describe("Bad entry", () => {
         chai.assert.throws(bad_entry, "Bad entry");
     });
 });
+
+
+//test interaction of entry with database
+describe("Interacting with the databse", () => {
+    it("Connects to database and interact with entries", (done) => {
+        mongoose.connection
+            .once("open", () => console.log("Connected"))
+            .on("error", (err) => {
+                console.warn("Error: ", err)
+            });
+
+            beforeEach((done) => {
+                mongoose.connection.collections.movies.drop(() => {
+                    done();
+                });
+            });
+
+            function create_entry() {
+                beforeEach((done) => {
+                    let newEntry = new Movie({
+                        username : "Tamim",
+                        name : "Avengers",
+                        genre : "action",
+                        release_date: 12,
+                        status: true
+                    });
+                    newEntry.save()
+                    .then(() => done());
+                });
+            };
+
+            create_entry()
+
+            it("Remove a movie using it's instance", (done) => {
+                Movie.remove()
+                .then(() => Movie.findOne({ username : "Tamim" }))
+                .then((movie) => {
+                    assert(movie == null);
+                    done();
+                });
+            });
+
+            create_entry()
+
+            it("Update a movie", (done) => {
+                updateData = new Movie({
+                    username : "Tamim",
+                    name : "Fast and Furious",
+                    genre : "action",
+                    release_date: 15,
+                    status: false
+                });
+
+                for(let i in updateData) {
+                    newEntry[i] = updateData[i];
+                }
+
+                Movie.findOne({ username : "Tamim" })
+                .then((movie) => {
+                    assert(movie.username == "Tamim")
+                    assert(movie.name == "Fast and Furious")
+                    assert(movie.genre == "action")
+                    assert(movie.release_date == 15)
+                    assert(movie.status == false)
+                    done();
+                })
+            })
+
+            it("Check that a movie is saved to DB and one that is not", (done) => {
+                Movie.findOne({ release_date : 12 })
+                .then((movie) => {
+                    assert(movie != null)
+                })
+
+                notSavedMovie = new Movie ({
+                    username : "Tamim",
+                    name : "J.I. Goe",
+                    genre : "action",
+                    release_date : 20,
+                    status : true
+                });
+
+                Movie.findOne({ name : "J.I. Goe" })
+                .then((movie) => {
+                    assert(movie == null)
+                    done();
+                })
+            })
+        mongoose.connection.collections.movies.drop(() => {
+            done();
+        });
+    });
+});
