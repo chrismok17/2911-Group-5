@@ -5,6 +5,10 @@ const port = process.env.PORT || 8080;
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+// to handle data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Tell the app to use /CSS directory for CSS files
 app.use("/CSS", express.static(path.join(__dirname, "CSS")));
 
@@ -29,6 +33,7 @@ db.once("open", () => {
 });
 
 MovieRouter = require("./routes/movies");
+app.use("/tracker", MovieRouter);
 
 // For Testing
 module.exports = app;

@@ -9,5 +9,8 @@ const Movie = require("../models/Movie");
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-//
-// app.get("/view")
+router.post("/view", (req, res) => {
+  res.send(`<h1>Your Username is :  ${req.body.username}</h1>`);
+});
+
+module.exports = router;
