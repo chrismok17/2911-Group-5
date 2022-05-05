@@ -3,11 +3,26 @@ const mongoose = require("mongoose");
 // the database schema
 
 const MovieSchema = new mongoose.Schema({
-  username: String,
-  name: String,
-  genre: String,
-  release_date: Number,
-  status: Boolean,
+  username: {
+    required: true,
+    type: String  
+  },
+  name: {
+    required: true,
+    type: String
+  },
+  genre: {
+    required: true,
+    type: String 
+  },
+  release_date: {
+    required: true,
+    type: Number
+  },
+  status: {
+    required: true,
+    type: Boolean
+  }
 });
 
 // export schema
