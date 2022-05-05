@@ -105,6 +105,10 @@ form {
   font-size: 1rem;
 }
 
+/* add padding to github link logo to center the text*/
+.githublink {
+  padding-left: 182px;
+}
 /* change placeholder text color from default light gray. */
 ::placeholder {
   color: var(--text-alternative);
