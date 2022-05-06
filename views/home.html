@@ -5,11 +5,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/home.css">
+
 </head>
 <body class="dark-theme">
+    <script src="../routes/movies.js"></script>
+
     <nav>
         <div class="logolink">
-            <a href="./home.html"><img src="../Assets/images/logo.png" alt="MovieTracker Logo"></a>
+            <a href="/"><img src="../Assets/images/logo.png" alt="MovieTracker Logo"></a>
         </div>
         <div class="navheading">
             <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
@@ -26,7 +29,7 @@
             
             <div id="usernameBoxAndBtn">
                 <input required name="username"id="usernameBox" type="text" placeholder="Enter Username" value="">
-                <button type="submit">Login</button>
+                <button onclick="return handleLogin()" id="submitBTN" type="submit">Login</button>
             </div>
             <p id="loginText">Enter your username; An account will be created automatically if you do not have one.</p>
         </form>
