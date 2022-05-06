@@ -15,6 +15,9 @@ app.use("/CSS", express.static(path.join(__dirname, "CSS")));
 // Tell app to use /Assets for logo files
 app.use("/Assets", express.static(path.join(__dirname, "Assets")));
 
+// Tell app to use /routes for files
+app.use("/routes", express.static(path.join(__dirname, "routes")));
+
 // Default route for home page
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/home.html"));
