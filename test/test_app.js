@@ -113,32 +113,6 @@ describe("app.js API", () => {
         });
     });
 
-    // Test PATCH
-    describe("PATCH existing movie entry at /tracker/form/:id", () => {
-        it("It should PATCH movie from /tracker/form/:id", (done) => {
-            const movieid = 1;
-            let movie = {
-                name: "Thor 4 More Thor",
-                genre: "Comedy",
-                status: false
-            }
-            chai.request(server)
-                .patch("/tracker/form/" + movieid)
-                .send(movie)
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a("object");
-                    response.body.should.have.property("id").eq(1);
-                    response.body.should.have.property("name").eq("Chris");
-                    response.body.should.have.property("username").eq("Thor 4 More Thor");
-                    response.body.should.have.property("genre").eq("Comedy");
-                    response.body.should.have.property("release_date").eq(05);
-                    response.body.should.have.property("status").eq(false);
-                movie.remove();
-                done();
-                });
-        });
-    });
 
     // Test DELETE
     describe("DELETE existing movie entry at /tracker/form/:id", () => {
