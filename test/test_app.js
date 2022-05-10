@@ -87,14 +87,11 @@ describe("app.js API", () => {
     describe("PUT new movie entry at /tracker/form/:id", () => {
         it("It should PUT /tracker/form/:id", (done) => {
             const movieid = 1;
-            let movie = new Movie ({
-                username: "Chris",
-                name: "Doctor Strange in the Multiverse of Madness",
-                genre: "horror",
-                release_date: 05,
-                status: true
-            })
-            movie.save();
+            let movie = {
+                name: "Thor 4 More Thor",
+                genre: "Comedy",
+                status: false
+            }
             chai.request(server)
                 .put("/tracker/form/" + movieid)
                 .send(movie)
@@ -102,12 +99,9 @@ describe("app.js API", () => {
                     res.should.have.status(200);
                     res.body.should.be.a("object");
                     response.body.should.have.property("id").eq(1);
-                    response.body.should.have.property("name").eq("Chris");
-                    response.body.should.have.property("username").eq("Doctor Strange in the Multiverse of Madness");
-                    response.body.should.have.property("genre").eq("horror");
-                    response.body.should.have.property("release_date").eq(05);
-                    response.body.should.have.property("status").eq(true);
-                movie.remove();
+                    response.body.should.have.property("username").eq("Thor 4 More Thor");
+                    response.body.should.have.property("genre").eq("Comedy");
+                    response.body.should.have.property("status").eq(false);
                 done();
                 });
         });
