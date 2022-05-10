@@ -40,7 +40,7 @@ describe("app.js API", () => {
     describe("GET create/edit page", () => {
         it("It should render the edit_create.html page", (done) => {
             chai.request(server)
-                .get("/tracker/edit") // Change this later (?)
+                .get("/tracker/form") 
                 .end((err, res) => {
                     res.should.have.status(200);
                     chai.expect(res).to.be.html;
