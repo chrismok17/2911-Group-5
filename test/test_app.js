@@ -46,6 +46,7 @@ describe("app.js API", () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     chai.expect(res).to.be.html;
+                done();
                 });
         });
     });
@@ -60,17 +61,20 @@ describe("app.js API", () => {
                 release_date: 05,
                 status: true
             })
+            movie.save();
             chai.request(server)
                 .post("/tracker/form")
                 .send(movie)
                 .end((err, res) => {
-                    res.should.have.status(200);
+                    res.should.have.status(201);
                     res.body.should.be.a("object");
                     response.body.should.have.property("name").eq("Chris");
                     response.body.should.have.property("username").eq("Doctor Strange in the Multiverse of Madness");
                     response.body.should.have.property("genre").eq("horror");
                     response.body.should.have.property("release_date").eq(05);
                     response.body.should.have.property("status").eq(true);
+                movie.remove();
+                done();
                 });
         });
     });
