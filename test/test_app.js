@@ -107,16 +107,16 @@ describe("app.js API", () => {
         });
     });
 
-    // Test DELETE
-    // describe("DELETE existing movie entry at /tracker/form/:id", () => {
-    //     it("It should DELETE movie from /tracker/form/:id", async () => {
-    //         chai.request(server)
-    //             .delete("/tracker/form/" + movie._id )
-    //             .end((err, res) => {
-    //                 res.should.have.status(200);
-    //             // done();
-    //             });
+    // TEST DELETE
+    describe("Delete a movie entry", () => {
+        it("Should succesfully delete a movie entry", (done) => {
+            chai.request(server)
+             .delete("/tracker/delete/:id")
+             .end((err, res) => {
+                res.status.should.be.equal(200)
             
-    //     });
-    // });
+            })
+        done();
+        })
+    })
 })
