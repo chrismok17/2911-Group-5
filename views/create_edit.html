@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/create_edit.css">
     <title>Create/Edit Page</title>
-  </head>
-  <body>
-    <h1>This is the Create/Edit Page</h1>
-  </body>
+</head>
+
+<body class="dark-theme">
+    <nav>
+        <div class="logolink">
+            <a href="./home.html"><img src="../Assets/images/logo.png" alt="MovieTracker Logo"></a>
+        </div>
+        <div class="navheading">
+            <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
+        </div>
+        <div class="githublink">
+            <a href="https://github.com/chrismok17/2911-Group-5" target="_blank"><img
+                    src="../Assets/images/GitHubLogo.png" alt="GitHub Repository Logo and Link"></a>
+        </div>
+    </nav>
+    <main>
+        <div class="item_top">
+            <h2>Create/Edit</h2>
+            <form action="" class="hidden_forms"><button id="cancel_btn" type="button">Cancel</button></form>
+        </div>
+        <form class="form_row_container">
+            <div class="form_rows">
+                <p>Name:</p>
+                <input required name="movie_name" class="input_boxes" type="text"
+                    value="">
+            </div>
+            <div class="form_rows">
+                <p>Genre:</p>
+                <input required name="genre_name" class="input_boxes" type="text" value="">
+            </div>
+            <div class="form_rows">
+                <p>Release Date:</p>
+                <input required name="release_date" class="input_boxes" type="text"
+                    value="">
+            </div>
+            <div class="form_rows">
+                <p>Watched?</p>
+                <select name="watched" class="input_boxes">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form_rows">
+                <!-- this empty p element is here so that the submit button ends up being on the right end of the page (using flex space-between) -->
+                <p></p>
+                <button>Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
 </html>
