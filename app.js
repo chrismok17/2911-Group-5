@@ -18,6 +18,9 @@ app.use("/Assets", express.static(path.join(__dirname, "Assets")));
 // Tell app to use /routes for files
 app.use("/routes", express.static(path.join(__dirname, "routes")));
 
+// use ejs
+app.set("view engine", "ejs");
+
 // Default route for home page
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/home.html"));
