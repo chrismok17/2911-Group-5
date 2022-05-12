@@ -61,7 +61,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
 h1 {
@@ -70,66 +69,6 @@ h1 {
 
 h2 {
     font-size: var(--header-size);
-}
-
-main {
-    flex-grow: 1;
-    padding: 150px;
-    font-size: var(--header-size);
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.categories {
-    height: 100%;
-    width: 100%;
-
-    list-style-type: none;
-    background-color: var(--nav-bg-color);
-    color: var(--text-alternative);
-    border-radius: 15px;
-    padding-left: 50px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-}
-
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: flex-start;
-    background-color: var(--silver);
-    border-radius: 10px;
-}
-
-.item_top {
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.categories_container {
-    height: 100%;
-    width: 100%;
-
-    list-style-type: none;
-    background-color: var(--silver);
-    color: var(--text-alternative);
-    border-radius: 15px;
-    padding: 50px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
 }
 
 /* add padding to github link logo to center the text*/
@@ -142,9 +81,87 @@ button {
     background-color: var(--bitter-lime);
     border: none;
     color: var(--text-alternative);
-    padding: 16px 50px;
+    padding: 12px 60px;
     text-decoration: none;
     cursor: pointer;
     border-radius: 15px;
     font-size: 1rem;
+}
+
+.title_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65vw;
+    padding: 0 0 20px 0;
+}
+
+table {
+    text-align: center;
+    width: 65vw;
+    border-collapse: collapse;
+}
+
+table tr {
+    height: 5vh;
+}
+
+table button {
+
+    margin: 0 0 0 10px;
+    background-color: var(--bitter-lime);
+    border: none;
+    color: var(--text-alternative);
+    padding: 4px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1rem;
+
+}
+
+.delete_button {
+    background-color: rgb(203, 65, 65);
+}
+
+#table_header_row {
+    background-color: var(--bitter-lime);
+    color: var(--eerie-black);
+    font-size: large;
+    font-weight: bold;
+}
+
+.table_row_odd {
+    background-color: var(--platinum);
+    color: var(--eerie-black);
+    font-weight:bold;
+}
+
+.table_row_even {
+    background-color: var(--silver);
+    color: var(--eerie-black);
+    font-weight: bold;
+}
+
+/* this ensures that the edit and delete buttons are side by side despite both being wrapped in form elements */
+.action_buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+
+.watch_checkbox {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    cursor: pointer;
+}
+
+.watch_checkbox:checked {
+    background-color: var(--lime-green);
 }
