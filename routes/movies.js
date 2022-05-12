@@ -7,30 +7,32 @@ const router = express.Router();
 const Movie = require("../models/Movie");
 
 // handles the login,in the real app, this list of user will be from database
-function handleLogin() {
-  // let entries = Movie.find()
-  // let entries = [{ username: "Bobby222" }];
-  // let users = [];
-  // for (let i = 0; i < entries.length; i++) {
-  //   users.push(entries[i]["username"]);
-  // }
-  // let user_set = new Set(users);
-  // let form = document.forms[0];
-  // var formElement = form.querySelector('input[name="username"]');
-  // if (formElement.value == "") {
-  //   return alert("Please provide a username!");
-  // }
-  // user_set.forEach((user) => {
-  //   if (formElement.value == user) {
-  //     return confirm(
-  //       `---${formElement.value}--- already exists, Do you wish to proceed?`
-  //     );
-  //   }
-  // });
-  // return confirm(
-  //   `---${formElement.value}--- Not found, an account will be made`
-  // );
-}
+// function handleLogin() {
+//   console.log("poggers");
+//   // let entries = await Movie.find();
+//   // return confirm("Hello");
+//   let entries = [{ username: "Bobby222" }];
+//   let users = [];
+//   for (let i = 0; i < entries.length; i++) {
+//     users.push(entries[i]["username"]);
+//   }
+//   let user_set = new Set(users);
+//   let form = document.forms[0];
+//   var formElement = form.querySelector('input[name="username"]');
+//   if (formElement.value == "") {
+//     return alert("Please provide a username!");
+//   }
+//   user_set.forEach((user) => {
+//     if (formElement.value == user) {
+//       return confirm(
+//         `---${formElement.value}--- already exists, Do you wish to proceed?`
+//       );
+//     }
+//   });
+//   return confirm(
+//     `---${formElement.value}--- Not found, an account will be made`
+//   );
+// }
 
 // to handle data
 router.use(express.json());
@@ -39,10 +41,8 @@ router.use(express.urlencoded({ extended: true }));
 // same as get request for view, shows table of data
 router.post("/view", async (req, res) => {
   let user_movies = await Movie.find({ username: req.body.username });
-  res.send(
-    `<h1>Your Username is :  ${req.body.username} || 
-     ---${user_movies}</h1>`
-  );
+  // res.json(user_movies);
+  res.render("view", { username: req.body.username, movies: user_movies });
 });
 
 // post request to form, add data to database
@@ -56,6 +56,7 @@ router.post("/form", (req, res) => {
 
 // get request for "create new" button
 router.get("/form/:username", (req, res) => {
+  // sends in username
   res.send(`Create page ${req.params.username}`);
 });
 
@@ -77,8 +78,9 @@ async function update_movie(req, res) {
       status: req.body.status,
     }
   );
-  let updated_movie = await Movie.findById({ _id: req.body._id });
-  res.json(updated_movie);
+  // let updated_movie = await Movie.findById({ _id: req.body._id });
+  let movies = await Movie.find({ username: req.body.username });
+  res.json(movies);
 }
 
 // insert movie function, adds a new entry to the database
@@ -86,7 +88,9 @@ async function new_movie(req, res) {
   console.log(req.body, "New");
   let movie_entry = new Movie(req.body);
   let send_entry = await movie_entry.save();
-  res.status(201).json(send_entry);
+  // res.status(201).json(send_entry);
+  let movies = await Movie.find({ username: req.body.username });
+  res.json(movies);
 }
 
 // delete by ID route
