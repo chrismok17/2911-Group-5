@@ -35,7 +35,9 @@
     <main>
       <div class="title_row">
         <h1>Your Current Watchlist: <%= username%></h1>
-        <form action=""><button>Add Movie</button></form>
+        <form action="/tracker/form/<%=username%>" method="GET">
+          <button type="submit">Add Movie</button>
+        </form>
       </div>
       <table>
         <tr id="table_header_row">
@@ -52,7 +54,17 @@
           <td><%=movies[i]["release_date"]%></td>
           <td><%=movies[i]["status"]%></td>
           <td class="action_buttons_container">
-            <form action=""><button>Edit</button></form>
+            <form action="/tracker/form/edit" method="POST">
+              <input type="hidden" name="id" value="<%=movies[i]["_id"]%>" >
+              <input type="hidden" name="username" value="<%=username%>" />
+              <input type="hidden" name="release_date"
+              value="<%=movies[i]["release_date"]%>" /> <input type="hidden"
+              name="name" value="<%=movies[i]["name"]%>" /> <input type="hidden"
+              name="genre" value="<%=movies[i]["genre"]%>" /> <input
+              type="hidden" name="status" value="<%=movies[i]["status"]%>" />
+
+              <button type="submit">Edit</button>
+            </form>
             <form action=""><button class="delete_button">Delete</button></form>
           </td>
         </tr>
