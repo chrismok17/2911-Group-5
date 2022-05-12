@@ -10,14 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/create_edit.css" />
+    <link href="../CSS/create_edit.css" rel="stylesheet" type="text/css" />
     <title>Create/Edit Page</title>
   </head>
 
   <body class="dark-theme">
     <nav>
       <div class="logolink">
-        <a href="./home.html"
+        <a href="/"
           ><img src="../Assets/images/logo.png" alt="MovieTracker Logo"
         /></a>
       </div>
@@ -34,30 +34,33 @@
     </nav>
     <main>
       <div class="item_top">
-        <h2>Create/Edit</h2>
-        <form action="" class="hidden_forms">
-          <button id="cancel_btn" type="button">Cancel</button>
+        <h2><%=action%>: <%=username%></h2>
+        <form action="/tracker/view" class="hidden_forms" method="POST">
+          <input type="hidden" name="username" value="<%=username%>" />
+          <button id="cancel_btn" type="submit">Cancel</button>
         </form>
       </div>
       <form action="/tracker/form" method="POST" class="form_row_container">
+        <input type="hidden" name="username" value="<%=username%>" />
+        <input type="hidden" name="id" value="<%=id%>" />
         <div class="form_rows">
           <p>Name:</p>
           <input
             required
-            name="movie_name"
+            name="name"
             class="input_boxes"
             type="text"
-            value=""
+            value="<%=name%>"
           />
         </div>
         <div class="form_rows">
           <p>Genre:</p>
           <input
             required
-            name="genre_name"
+            name="genre"
             class="input_boxes"
             type="text"
-            value=""
+            value="<%=genre%>"
           />
         </div>
         <div class="form_rows">
@@ -67,7 +70,7 @@
             name="release_date"
             class="input_boxes"
             type="text"
-            value=""
+            value="<%=release_date%>"
           />
         </div>
         <div class="form_rows">
@@ -80,7 +83,7 @@
         <div class="form_rows">
           <!-- this empty p element is here so that the submit button ends up being on the right end of the page (using flex space-between) -->
           <p></p>
-          <button>Submit</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </main>
