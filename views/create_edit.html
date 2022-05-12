@@ -32,26 +32,28 @@
         <form class="form_row_container">
             <div class="form_rows">
                 <p>Name:</p>
-                <input required name="movie_name" id="movie_name_box" type="text" placeholder="Enter Movie Name"
+                <input required name="movie_name" class="input_boxes" type="text"
                     value="">
             </div>
             <div class="form_rows">
                 <p>Genre:</p>
-                <input required name="genre_name" id="genre_box" type="text" placeholder="Enter Genre" value="">
+                <input required name="genre_name" class="input_boxes" type="text" value="">
             </div>
             <div class="form_rows">
                 <p>Release Date:</p>
-                <input required name="release_date" id="releasee_box" type="text" placeholder="Enter Release Date"
+                <input required name="release_date" class="input_boxes" type="text"
                     value="">
             </div>
             <div class="form_rows">
                 <p>Watched?</p>
-                <select name="watched" id="whatched">
+                <select name="watched" class="input_boxes">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
             </div>
             <div class="form_rows">
+                <!-- this empty p element is here so that the submit button ends up being on the right end of the page (using flex space-between) -->
+                <p></p>
                 <button>Submit</button>
             </div>
         </form>

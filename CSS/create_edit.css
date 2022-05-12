@@ -101,27 +101,21 @@ form {
 
 .form_row_container {
     height: 100%;
-    width: 100%;
+    width: 63vw;
 
     list-style-type: none;
-    background-color: var(--silver);
     color: var(--text-alternative);
     border-radius: 15px;
 
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-bottom: 95px;
-
     display: flex;
     flex-direction: column;
-
 }
 
 .form_rows {
+    width: 50vw;
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    /* background-color: yellow; remove */
 }
 
 /* add padding to github link logo to center the text*/
@@ -167,4 +161,12 @@ button {
 
 .hidden_forms {
     background-color: transparent;
+}
+
+.input_boxes {
+    background-color: rgb(116, 115, 115);
+    color: var(--arctic-lime);
+    border-radius: 15px;
+    width: 20vw;
+    text-align: center;
 }
