@@ -25,41 +25,64 @@
         </div>
     </nav>
     <main>
-        <div class="item_top">
-            <h2>You Current Watchlist</h2>
-            <button type="button">Add Movie</button>
+        <div class="title_row">
+            <h1>Your Current Watchlist</h1>
+            <form action=""><button>Add Movie</button></form>
         </div>
-        <form>
-            <ul class="categories">
-                <li>Name</li>
-                <li>Genre</li>
-                <li>Release Date</li>
-                <li>Status</li>
-                <li>Actions</li>
-            </ul>
-        </form>
-        <div class="categories_container">
-            <ul class="movie_name">
-                <li>Avengers</li>
-                <li>Spongebooob</li>
-            </ul>
-            <ul class="movie_genre">
-                <li>Action</li>
-                <li>Horror</li>
-            </ul>
-            <ul class="movie_release_date">
-                <li>2019</li>
-                <li>2020</li>
-            </ul>
-            <ul class="movie_status">
-                <li>released</li>
-                <li>unreleased</li>
-            </ul>
-            <div class="movie_action">
-                <button type="button">Edit</button>
-                <button type="button">Delete</button>
-            </div>
-        </div>
+        <table>
+            <tr id="table_header_row">
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr class="table_row_odd">
+                <td>Avengers Endgame</td>
+                <td>Action</td>
+                <td>2019</td>
+                <td>
+                    <input type="checkbox" name="watched" class="watch_checkbox">
+                </td>
+                <td class="action_buttons_container">
+                    <form action=""><button>Edit</button></form>
+                    <form action=""><button class="delete_button">Delete</button></form>
+                </td>
+            </tr>
+            <tr class="table_row_even">
+                <td>Spongebob</td>
+                <td>Horror</td>
+                <td>2021</td>
+                <td>
+                    <input type="checkbox" name="watched" class="watch_checkbox">
+                </td>
+                <td class="action_buttons_container">
+                    <form action=""><button>Edit</button></form>
+                    <form action=""><button class="delete_button">Delete</button></form>
+                </td>
+            </tr>
+            <tr class="table_row_odd">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="table_row_even">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="table_row_odd">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </main>
 </body>
 </html>
