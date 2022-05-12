@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/view.css">
     <title>View Movies</title>
-  </head>
-  <body>
-    <h1>This is the View page</h1>
-  </body>
+</head>
+
+<body class="dark-theme">
+    <nav>
+        <div class="logolink">
+            <a href="./home.html"><img src="../Assets/images/logo.png" alt="MovieTracker Logo"></a>
+        </div>
+        <div class="navheading">
+            <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
+        </div>
+        <div class="githublink">
+            <a href="https://github.com/chrismok17/2911-Group-5" target="_blank"><img
+                    src="../Assets/images/GitHubLogo.png" alt="GitHub Repository Logo and Link"></a>
+        </div>
+    </nav>
+    <main>
+        <div class="title_row">
+            <h1>Your Current Watchlist</h1>
+            <form action=""><button>Add Movie</button></form>
+        </div>
+        <table>
+            <tr id="table_header_row">
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr class="table_row_odd">
+                <td>Avengers Endgame</td>
+                <td>Action</td>
+                <td>2019</td>
+                <td>
+                    <input type="checkbox" name="watched" class="watch_checkbox">
+                </td>
+                <td class="action_buttons_container">
+                    <form action=""><button>Edit</button></form>
+                    <form action=""><button class="delete_button">Delete</button></form>
+                </td>
+            </tr>
+            <tr class="table_row_even">
+                <td>Spongebob</td>
+                <td>Horror</td>
+                <td>2021</td>
+                <td>
+                    <input type="checkbox" name="watched" class="watch_checkbox">
+                </td>
+                <td class="action_buttons_container">
+                    <form action=""><button>Edit</button></form>
+                    <form action=""><button class="delete_button">Delete</button></form>
+                </td>
+            </tr>
+            <tr class="table_row_odd">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="table_row_even">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="table_row_odd">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </main>
+</body>
 </html>
