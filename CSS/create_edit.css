@@ -1,172 +1,173 @@
 :root {
-    --platinum: #e9ebea;
-    --arctic-lime: #d2ff00;
-    --bitter-lime: #b3f700;
-    --lime-green: #00c41f;
-    --eerie-black: #13181b;
-    --silver: #c4c4c4;
+  --platinum: #e9ebea;
+  --arctic-lime: #d2ff00;
+  --bitter-lime: #b3f700;
+  --lime-green: #00c41f;
+  --eerie-black: #13181b;
+  --silver: #c4c4c4;
 
-    --nav-text-size: 1.4rem;
-    --text-size: 1.2rem;
-    --header-size: 1.7rem;
-    --small-text-size: 0.9rem;
+  --nav-text-size: 1.4rem;
+  --text-size: 1.2rem;
+  --header-size: 1.7rem;
+  --small-text-size: 0.9rem;
 }
 
 /*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
 .dark-theme {
-    --bg-color: var(--eerie-black);
-    --nav-bg-color: var(--bitter-lime);
-    --text: var(--platinum);
-    --text-alternative: var(--eerie-black);
+  --bg-color: var(--eerie-black);
+  --nav-bg-color: var(--bitter-lime);
+  --text: var(--platinum);
+  --text-alternative: var(--eerie-black);
 }
 
 /* This catch-all at the beginning removes all default margin and padding spacings to allow for maximum customizability later. */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text);
-    height: 100vh;
-    font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 
-    /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
-    display: flex;
-    flex-direction: column;
+  /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
-    /* using flexbox to align the navbar items in a horizontal line with even spaces inbetween */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* using flexbox to align the navbar items in a horizontal line with even spaces inbetween */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    background-color: var(--nav-bg-color);
-    color: var(--text-alternative);
-    border-radius: 15px;
-    padding: 5px;
-    margin: 10px;
+  background-color: var(--nav-bg-color);
+  color: var(--text-alternative);
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
 }
 
 main {
-    /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
-    flex-grow: 1;
+  /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
+  flex-grow: 1;
 
-    padding: 50px;
+  padding: 50px;
 
-    /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 {
-    font-size: var(--nav-text-size);
+  font-size: var(--nav-text-size);
 }
 
 h2 {
-    font-size: var(--header-size);
+  font-size: var(--header-size);
 }
 
 main {
-    flex-grow: 1;
-    padding: 150px;
-    font-size: var(--header-size);
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  flex-grow: 1;
+  padding: 150px;
+  font-size: var(--header-size);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 form {
-    display: flex;
-    align-items: center;
-    justify-self: flex-start;
-    background-color: var(--silver);
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  background-color: var(--silver);
+  border-radius: 10px;
 }
 
 .item_top {
-    width: 80%;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 80%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form_row_container {
-    height: 100%;
-    width: 63vw;
+  height: 100%;
+  width: 63vw;
 
-    list-style-type: none;
-    color: var(--text-alternative);
-    border-radius: 15px;
+  list-style-type: none;
+  color: var(--text-alternative);
+  border-radius: 15px;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form_rows {
-    width: 50vw;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+  width: 50vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* add padding to github link logo to center the text*/
 .githublink {
-    padding-left: 182px;
+  padding-left: 182px;
 }
 
 button {
-    margin: 0 0 0 10px;
-    background-color: var(--bitter-lime);
-    border: none;
-    color: var(--text-alternative);
-    padding: 16px 50px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 15px;
-    font-size: 1rem;
+  margin: 0 0 0 10px;
+  background-color: var(--bitter-lime);
+  border: none;
+  color: var(--text-alternative);
+  padding: 16px 50px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 1rem;
 }
 
-#yes_checkbox_round, #no_checkbox_round {
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+#yes_checkbox_round,
+#no_checkbox_round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 
 #yes_checkbox_round:checked {
-    background-color: var(--lime-green);
+  background-color: var(--lime-green);
 }
 #no_checkbox_round:checked {
-    background-color: rgb(234, 67, 67);
+  background-color: rgb(234, 67, 67);
 }
 
 #cancel_btn {
-    background-color: rgb(234, 67, 67);
+  background-color: rgb(234, 67, 67);
 }
 
 .hidden_forms {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .input_boxes {
-    background-color: rgb(116, 115, 115);
-    color: var(--arctic-lime);
-    border-radius: 15px;
-    width: 20vw;
-    text-align: center;
+  background-color: rgb(116, 115, 115);
+  color: var(--arctic-lime);
+  border-radius: 15px;
+  width: 20vw;
+  text-align: center;
 }
