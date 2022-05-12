@@ -27,6 +27,7 @@ function handleLogin() {
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
+// same as get request for view, shows table of data
 router.post("/view", (req, res) => {
   let info = {
     johnny: "Johnny's Credit Card Number: 7772 3234 6746 2124",
@@ -38,5 +39,34 @@ router.post("/view", (req, res) => {
     }</h1>`
   );
 });
+
+// post request to form, add data to database
+router.post("/form", (req, res) => {
+  if (req.body._id == "") {
+    new_movie(req, res);
+  } else {
+    update_movie(req, res);
+  }
+});
+
+// update movie function, updates existing movie entry
+function update_movie(req, res) {
+  console.log(req.body, "Update");
+  Movie.findOneAndUpdate(
+    { _id: req.body.id },
+    {
+      username: req.body.username,
+      name: req.body.name,
+      genre: req.body.genre,
+      release_date: req.body.release_date,
+      status: req.body.status,
+    }
+  );
+}
+
+// insert movie function, adds a new entry to the database
+function new_movie(req, res) {
+  console.log(req.body, "New");
+}
 
 module.exports = router;
