@@ -5,24 +5,24 @@ const mongoose = require("mongoose");
 const MovieSchema = new mongoose.Schema({
   username: {
     required: true,
-    type: String  
+    type: String,
   },
   name: {
     required: true,
-    type: String
+    type: String,
   },
   genre: {
     required: true,
-    type: String 
+    type: String,
   },
   release_date: {
     required: true,
-    type: Number
+    type: Number,
   },
   status: {
     required: true,
-    type: Boolean
-  }
+    type: Boolean,
+  },
 });
 
 // export schema
