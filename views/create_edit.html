@@ -27,29 +27,32 @@
     <main>
         <div class="item_top">
             <h2>Create/Edit</h2>
-            <button class="cancel_btn" type="button">Cancel</button>
+            <form action="" class="hidden_forms"><button id="cancel_btn" type="button">Cancel</button></form>
         </div>
-        <form>
-            <div class="container">
-                <div id="movie_name_input">
-                    <p>Name:</p>
-                    <input required name="movie_name" id="movie_name_box" type="text" placeholder="Enter Movie Name"
-                        value="">
-                </div>
-                <div id="genre_name_input">
-                    <p>Genre:</p>
-                    <input required name="genre_name" id="genre_box" type="text" placeholder="Enter Genre" value="">
-                </div>
-                <div id="release_date_input">
-                    <p>Release Date:</p>
-                    <input required name="release_date" id="releasee_box" type="text" placeholder="Enter Release Date"
-                        value="">
-                </div>
-                <div id="watched_input">
-                    <p>Watched?</p>
-                    <input type="checkbox" class="checkbox-round" />
-                    <input type="checkbox" class="checkbox-round" />
-                </div>
+        <form class="form_row_container">
+            <div class="form_rows">
+                <p>Name:</p>
+                <input required name="movie_name" id="movie_name_box" type="text" placeholder="Enter Movie Name"
+                    value="">
+            </div>
+            <div class="form_rows">
+                <p>Genre:</p>
+                <input required name="genre_name" id="genre_box" type="text" placeholder="Enter Genre" value="">
+            </div>
+            <div class="form_rows">
+                <p>Release Date:</p>
+                <input required name="release_date" id="releasee_box" type="text" placeholder="Enter Release Date"
+                    value="">
+            </div>
+            <div class="form_rows">
+                <p>Watched?</p>
+                <select name="watched" id="whatched">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form_rows">
+                <button>Submit</button>
             </div>
         </form>
     </main>

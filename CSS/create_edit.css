@@ -99,7 +99,7 @@ form {
     justify-content: space-between;
 }
 
-.container {
+.form_row_container {
     height: 100%;
     width: 100%;
 
@@ -117,15 +117,11 @@ form {
 
 }
 
-#movie_name_input,
-#genre_name_input,
-#release_date_input,
-#watched_input {
+.form_rows {
     padding: 20px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: space-between;
+    /* background-color: yellow; remove */
 }
 
 /* add padding to github link logo to center the text*/
@@ -145,7 +141,7 @@ button {
     font-size: 1rem;
 }
 
-.checkbox-round {
+#yes_checkbox_round, #no_checkbox_round {
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -158,6 +154,17 @@ button {
     cursor: pointer;
 }
 
-.checkbox-round:checked {
+#yes_checkbox_round:checked {
     background-color: var(--lime-green);
+}
+#no_checkbox_round:checked {
+    background-color: rgb(234, 67, 67);
+}
+
+#cancel_btn {
+    background-color: rgb(234, 67, 67);
+}
+
+.hidden_forms {
+    background-color: transparent;
 }
