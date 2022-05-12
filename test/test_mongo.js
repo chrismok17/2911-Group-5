@@ -136,9 +136,9 @@ describe("Testing Mongo connections", () => {
                         done();
                     })
                 })
-                mongoose.connection.collections.movies.drop(() => {
-                done();
-            });
+            //     mongoose.connection.collections.movies.drop(() => {
+            //     done();
+            // });
         });
     });
 })
