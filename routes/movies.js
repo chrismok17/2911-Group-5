@@ -85,7 +85,7 @@ async function update_movie(req, res) {
 
 // insert movie function, adds a new entry to the database
 async function new_movie(req, res) {
-  console.log(req.body, "New");
+  // console.log(req.body, "New");
   let movie_entry = new Movie(req.body);
   let send_entry = await movie_entry.save();
   // res.status(201).json(send_entry);
