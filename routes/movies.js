@@ -6,15 +6,8 @@ const router = express.Router();
 // the schema
 const Movie = require("../models/Movie");
 
-// all entries
-async function all_users() {
-  let entries = await Movie.find();
-  return entries;
-}
-
 // handles the login,in the real app, this list of user will be from database
 function handleLogin() {
-  return confirm(all_users());
   // let entries = Movie.find()
   // let entries = [{ username: "Bobby222" }];
   // let users = [];
@@ -95,5 +88,11 @@ async function new_movie(req, res) {
   let send_entry = await movie_entry.save();
   res.status(201).json(send_entry);
 }
+
+// delete by ID route
+router.delete("/delete/:id", async (req, res) => {
+  let deleted_movie = await Movie.findByIdAndDelete({ _id: req.params.id });
+  res.json(deleted_movie);
+});
 
 module.exports = router;
