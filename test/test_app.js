@@ -89,7 +89,7 @@ describe("app.js API", () => {
                 genre: "comedy",
                 release_date: movie.release_date,
                 status: false}, {returnOriginal: false})
-            console.log(updated_movie)
+            // console.log(updated_movie)
             chai.request(server)
                 .post("/tracker/form/" )
                 .send(updated_movie)
