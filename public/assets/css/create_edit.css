@@ -12,6 +12,12 @@
   --small-text-size: 0.9rem;
 }
 
+/* highlights */
+::selection {
+  color: rgb(0, 0, 0);
+  background: #b3f700;
+}
+
 /*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
 .dark-theme {
   --bg-color: var(--eerie-black);
