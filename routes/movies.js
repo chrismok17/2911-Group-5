@@ -119,22 +119,13 @@ async function new_movie(req, res) {
   // res.status(201).json(send_entry);
   let movies = await Movie.find({ username: req.body.username });
   res.render("view", { movies: movies, username: req.body.username });
-
-  // {
-  //   action: "Create",
-  //   username: req.body.username,
-  //   id: "",
-  //   name: "",
-  //   genre: "",
-  //   release_date: "",
-  //   status: "",
-  // }
 }
 
 // delete by ID route
-router.delete("/delete/:id", async (req, res) => {
+router.post("/delete/:id", async (req, res) => {
   let deleted_movie = await Movie.findByIdAndDelete({ _id: req.params.id });
-  res.json(deleted_movie);
+  let movies = await Movie.find({ username: req.body.username });
+  res.render("view", { movies: movies, username: req.body.username });
 });
 
 module.exports = router;
