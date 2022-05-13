@@ -60,7 +60,7 @@ router.post("/form", (req, res) => {
 router.get("/form/:username/", (req, res) => {
   // sends in username
   res.render("create_edit", {
-    action: "New",
+    action: "New Movie",
     username: req.params.username,
     id: "",
     name: "",
@@ -75,7 +75,7 @@ router.post("/form/edit", async (req, res) => {
   let edit_instance = await Movie.find({ _id: req.body.id });
   // res.send(req.body.username);
   res.render("create_edit", {
-    action: "Edit",
+    action: "Edit Movie",
     username: req.body.username,
     name: req.body.name,
     genre: req.body.genre,
@@ -101,13 +101,11 @@ async function update_movie(req, res) {
   // let updated_movie = await Movie.findById({ _id: req.body._id });
   let movies = await Movie.find({ username: req.body.username });
   // res.json(movies);
-  console.log(movies);
   res.render("view", { username: req.body.username, movies: movies });
 }
 
 // insert movie function, adds a new entry to the database
 async function new_movie(req, res) {
-  // console.log(req.body, "New");
   let movie_entry = new Movie({
     username: req.body.username,
     name: req.body.name,
