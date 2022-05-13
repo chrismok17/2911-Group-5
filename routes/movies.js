@@ -115,6 +115,7 @@ async function new_movie(req, res) {
     release_date: req.body.release_date,
     status: req.body.status,
   });
+
   let send_entry = await movie_entry.save();
   // res.status(201).json(send_entry);
   let movies = await Movie.find({ username: req.body.username });
