@@ -3,6 +3,7 @@ let chaihttp = require("chai-http");
 let server = require("../app");
 const { describe } = require("mocha");
 const Movie = require("../models/Movie");
+const { assert } = require("chai");
 
 // Tell chai to use chai-http
 chai.should();
@@ -28,7 +29,7 @@ describe("app.js API", () => {
     describe("GET view page", () => {
         it("It should render view.html", (done) => {
             chai.request(server)
-                .get("/tracker/view")
+                .post("/tracker/view")
                 .end((err, res) => {
                     res.should.have.status(200);
                     chai.expect(res).to.be.html;
@@ -39,13 +40,13 @@ describe("app.js API", () => {
 
     // Test GET create/edit
     describe("GET create/edit page", () => {
-        it("It should render the edit_create.html page", (done) => {
+        it("It should render the edit_create.html page", async () => {
             chai.request(server)
-                .get("/tracker/form") 
+                .post("/tracker/form") 
                 .end((err, res) => {
                     res.should.have.status(200);
                     chai.expect(res).to.be.html;
-                done();
+                    res.should.render("/create_edit")
                 });
         });
     });
@@ -69,7 +70,7 @@ describe("app.js API", () => {
                 .end((err, res) => {
                     res.status.should.be.equal(200);
                     res.body.should.be.a("object");
-                    // res.body.should.have.property("_id").eq(movie._id)
+                    res.body.should.have.property("_id").eq(movie._id)
                     res.body.should.have.property("username").eq("Chris");
                     res.body.should.have.property("name").eq("Doctor Strange in the Multiverse of Madness");
                     res.body.should.have.property("genre").eq("horror");
@@ -77,6 +78,7 @@ describe("app.js API", () => {
                     res.body.should.have.property("status").eq(true);
                 })
             done();
+            console.log(movie)
         });
     });
 
@@ -89,21 +91,20 @@ describe("app.js API", () => {
                 genre: "comedy",
                 release_date: movie.release_date,
                 status: false}, {returnOriginal: false})
-            // console.log(updated_movie)
             chai.request(server)
                 .post("/tracker/form/" )
                 .send(updated_movie)
                 .end((err, res) => {
                     res.status.should.be.equal(200);
                     res.body.should.be.a("object");
-                    // res.body.should.have.property("_id").eq(updated_movie._id);
+                    assert.equal(movie._id, updated_movie._id, "_id are not the same")
                     res.body.should.have.property("username").eq("Chris");
                     res.body.should.have.property("name").eq("Thor 4 More Thor");
                     res.body.should.have.property("genre").eq("comedy");
                     res.body.should.have.property("release_date").eq(05);
                     res.body.should.have.property("status").eq(false);
-                
                 });
+            console.log(updated_movie) 
         });
     });
 

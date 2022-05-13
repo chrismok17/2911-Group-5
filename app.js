@@ -9,14 +9,8 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Tell the app to use /CSS directory for CSS files
-app.use("/CSS", express.static(path.join(__dirname, "CSS")));
-
-// Tell app to use /Assets for logo files
-app.use("/Assets", express.static(path.join(__dirname, "Assets")));
-
-// Tell app to use /routes for files
-app.use("/routes", express.static(path.join(__dirname, "routes")));
+// Tell app to use /public for all assets including css and images
+app.use(express.static(__dirname + "/public"))
 
 // use ejs
 app.set("view engine", "ejs");
