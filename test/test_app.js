@@ -112,7 +112,7 @@ describe("app.js API", () => {
     describe("Delete a movie entry", () => {
         it("Should succesfully delete a movie entry", (done) => {
             chai.request(server)
-             .delete("/tracker/delete/:id")
+             .post("/tracker/delete/:id")
              .end((err, res) => {
                 res.status.should.be.equal(200)
             
