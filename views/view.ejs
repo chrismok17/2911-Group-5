@@ -65,57 +65,30 @@
 
               <button type="submit">Edit</button>
             </form>
-            <form action=""><button class="delete_button">Delete</button></form>
+            <form method="POST" action="/tracker/delete/<%=movies[i]["_id"]%>">
+              <input type="hidden" name="username" value="<%=username%>" />
+              <button onclick="return confirm('Are you sure you want to delete?')" type="submit" class="delete_button">Delete</button>
+            </form>
           </td>
         </tr>
         <% }%>
 
-        <tr class="table_row_odd">
-          <td>Poop</td>
+        <!-- <tr class="table_row_odd">
+          <td>Avengers</td>
           <td>Action</td>
           <td>2019</td>
           <td>
             <input type="checkbox" name="watched" class="watch_checkbox" />
           </td>
           <td class="action_buttons_container">
-            <form action=""><button>Edit</button></form>
-            <form action=""><button class="delete_button">Delete</button></form>
+            <form action="#"><button>Edit</button></form>
+            <form action="#">
+              <button class="delete_button">Delete</button>
+            </form>
           </td>
-        </tr>
-
-        <!-- <tr class="table_row_even">
-          <td>Spongebob</td>
-          <td>Horror</td>
-          <td>2021</td>
-          <td>
-            <input type="checkbox" name="watched" class="watch_checkbox" />
-          </td>
-          <td class="action_buttons_container">
-            <form action=""><button>Edit</button></form>
-            <form action=""><button class="delete_button">Delete</button></form>
-          </td>
-        </tr>
-        <tr class="table_row_odd">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr class="table_row_even">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr class="table_row_odd">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
         </tr> -->
+
+        
       </table>
     </main>
   </body>
