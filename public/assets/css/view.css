@@ -129,6 +129,10 @@ table button {
   font-weight: bold;
 }
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .table_row_odd {
   background-color: var(--platinum);
   color: var(--eerie-black);
