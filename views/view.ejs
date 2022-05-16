@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/view.css" type="text/css">
+    <script type="text/javascript" src="/assets/scripts/search.js"></script>
     <title>View</title>
   </head>
 
@@ -35,11 +36,12 @@
     <main>
       <div class="title_row">
         <h1>Your Current Watchlist: <%= username%></h1>
+        <input type="text" id="searchbar" onkeyup="search()" placeholder="Search...">
         <form action="/tracker/form/<%=username%>" method="GET">
           <button type="submit">Add Movie</button>
         </form>
       </div>
-      <table>
+      <table id="viewtable">
         <tr id="table_header_row">
           <th>Name</th>
           <th>Genre</th>
