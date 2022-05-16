@@ -1,13 +1,14 @@
 function search() {
-    let input = document.getElementById("searchbar");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("viewtable");
-    let tablerow = table.getElementById("table_row_odd");
+    let input, filter, table, tablerow, tabledata, i, txtValue;
+    input = document.getElementById("searchbar");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("viewtable");
+    tablerow = table.getElementsByTagName("tr");
 
-    for (let i = 0; i < tablerow.length; i++) {
-        td = tablerow[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
+    for (i = 0; i < tablerow.length; i++) {
+        tabledata = tablerow[i].getElementsByTagName("td")[0];
+        if (tabledata) {
+            txtValue = tabledata.textContent || tabledata.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tablerow[i].style.display= "";
             }
