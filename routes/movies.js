@@ -1,12 +1,15 @@
 const express = require("express");
 const app = require("../app");
 const path = require("path");
+const fetch = require("node-fetch");
 
 // express router
 const router = express.Router();
 
 // the schema
 const Movie = require("../models/Movie");
+const { response } = require("../app");
+const res = require("express/lib/response");
 
 // here lies the space that the login function used to live
 
@@ -94,8 +97,12 @@ async function new_movie(req, res) {
   res.render("view", { movies: movies, username: req.body.username });
 }
 
-function movie_info(formatted_name, year) {
-  return formatted_name;
+async function movie_info(formatted_name, year) {
+  const response = await fetch(
+    `http://www.omdbapi.com/?apikey=8f5f081b&t=${formatted_name}&y=${year}&plot=full`
+  );
+
+  return response.json();
 }
 
 // delete by ID route
@@ -111,8 +118,11 @@ router.post("/info", async (req, res) => {
   let formatted_name = movie_name.replace(/ /g, "+");
   let username = req.body.username;
   let movie_year = req.body.year;
-  res.send(movie_info(formatted_name, movie_year));
-  // res.send(movie_info(formatted_name, movie_year));
+
+  // data
+  res.render("movie_info", {
+    data: await movie_info(formatted_name, movie_year),
+  });
 });
 
 module.exports = router;
