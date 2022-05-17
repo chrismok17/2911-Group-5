@@ -159,17 +159,23 @@ tr:nth-child(even) {
   height: 5vh;
 }
 
-.watch_checkbox {
-  width: 1.3em;
-  height: 1.3em;
-  background-color: white;
+/* .watched and .unwatched corresponds to the status of movie */
+.watched {
+  width: 1.5em;
+  height: 1.5em;
+  margin: auto;
+  background-color: var(--lime-green);
   border-radius: 50%;
-  vertical-align: middle;
   border: 1px solid #ddd;
-  appearance: none;
-  cursor: pointer;
+  text-align: center;
 }
 
-.watch_checkbox:checked {
-  background-color: var(--lime-green);
+.unwatched {
+  width: 1.5em;
+  height: 1.5em;
+  margin: auto;
+  background-color: rgb(203, 65, 65);
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
 }

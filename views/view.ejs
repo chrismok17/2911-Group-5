@@ -54,7 +54,11 @@
           <td><%=movies[i]["name"]%></td>
           <td><%=movies[i]["genre"]%></td>
           <td><%=movies[i]["release_date"]%></td>
-          <td><%=movies[i]["status"]%></td>
+          <% if (movies[i]["status"] == true) { %>
+            <td><div class="watched"></div></td>
+          <% } else { %>
+            <td><div class="unwatched"></div></td>
+          <% } %>
           <td class="action_buttons_container">
             <form action="/tracker/form/edit" method="POST">
               <input type="hidden" name="id" value="<%=movies[i]["_id"]%>" >
