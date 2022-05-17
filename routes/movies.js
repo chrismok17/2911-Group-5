@@ -122,6 +122,7 @@ router.post("/info", async (req, res) => {
   // data
   res.render("movie_info", {
     data: await movie_info(formatted_name, movie_year),
+    username: username,
   });
 });
 
