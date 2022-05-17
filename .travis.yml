@@ -1,3 +1,13 @@
 language: node_js
 node_js:
   - "16"
+
+branches:
+  only:
+    - main
+
+deploy:
+  provider: heroku
+  app: movietracker2911
+  api_key:
+    secure: "a3ffd813-93cb-473f-a289-2fae363fe327"
