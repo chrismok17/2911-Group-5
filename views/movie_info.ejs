@@ -15,10 +15,19 @@
     alt="poster of movie lol">
     <h1>Movie info</h1>
 
-    <h2><%=data["Title"]%></h2>
+    <h2>Title: <%=data["Title"]%></h2>
+    <h3>Plot</h3>
     <p><%=data["Plot"]%></p>
-    <% } else{ %>
+    <h3>Release date: <%=data["Released"]%></h3>
+    <h3>Genre: <%=data["Genre"]%></h3>
+    <h3>Directors: <%=data["Director"]%></h3>
+    <h3>Awards: <%=data["Awards"]%></h3>
+    <h3>Ratings</h3>
+    <% for(var i=0; i < data["Ratings"].length; i++) { %>
+    <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
+    <% } %> <% } else{ %>
     <h1>Movie not found</h1>
     <% } %>
+    <h3>Box Office: <%=data["BoxOffice"]%></h3>
   </body>
 </html>
