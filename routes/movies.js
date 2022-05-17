@@ -8,33 +8,7 @@ const router = express.Router();
 // the schema
 const Movie = require("../models/Movie");
 
-// handles the login,in the real app, this list of user will be from database
-// function handleLogin() {
-//   console.log("poggers");
-//   // let entries = await Movie.find();
-//   // return confirm("Hello");
-//   let entries = [{ username: "Bobby222" }];
-//   let users = [];
-//   for (let i = 0; i < entries.length; i++) {
-//     users.push(entries[i]["username"]);
-//   }
-//   let user_set = new Set(users);
-//   let form = document.forms[0];
-//   var formElement = form.querySelector('input[name="username"]');
-//   if (formElement.value == "") {
-//     return alert("Please provide a username!");
-//   }
-//   user_set.forEach((user) => {
-//     if (formElement.value == user) {
-//       return confirm(
-//         `---${formElement.value}--- already exists, Do you wish to proceed?`
-//       );
-//     }
-//   });
-//   return confirm(
-//     `---${formElement.value}--- Not found, an account will be made`
-//   );
-// }
+// here lies the space that the login function used to live
 
 // to handle data
 router.use(express.json());
@@ -120,11 +94,25 @@ async function new_movie(req, res) {
   res.render("view", { movies: movies, username: req.body.username });
 }
 
+function movie_info(formatted_name, year) {
+  return formatted_name;
+}
+
 // delete by ID route
 router.post("/delete/:id", async (req, res) => {
   let deleted_movie = await Movie.findByIdAndDelete({ _id: req.params.id });
   let movies = await Movie.find({ username: req.body.username });
   res.render("view", { movies: movies, username: req.body.username });
+});
+
+// serve the page with movie data, uses third party movie API
+router.post("/info", async (req, res) => {
+  let movie_name = req.body.name;
+  let formatted_name = movie_name.replace(/ /g, "+");
+  let username = req.body.username;
+  let movie_year = req.body.year;
+  res.send(movie_info(formatted_name, movie_year));
+  // res.send(movie_info(formatted_name, movie_year));
 });
 
 module.exports = router;
