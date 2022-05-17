@@ -72,16 +72,19 @@
               <button type="submit">Edit</button>
             </form>
             <form method="POST" action="/tracker/delete/<%=movies[i]["_id"]%>">
-              <input type="hidden" name="username" value="<%=username%>" />
+              <input type="hidden" name="username" value="<%=username%>"/>
               <button onclick="return confirm('Are you sure you want to delete?')" type="submit" class="delete_button">Delete</button>
+            </form>
+            <form method="POST" action="/tracker/info">
+              <input type="hidden" name="username" value="<%=username%>" />
+              <input type="hidden" name="name" value="<%=movies[i]["name"]%>" />
+              <input type="hidden" name="year" value="<%=movies[i]["release_date"]%>"/>
+
+              <button class="info-btn" type="Submit">Summary</button>
             </form>
           </td>
         </tr>
         <% }%>
-
-       
-
-        
       </table>
     </main>
   </body>
