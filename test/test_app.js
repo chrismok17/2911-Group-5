@@ -67,6 +67,14 @@ describe("app.js API", () => {
   // Test POST
   describe("POST new movie entry", () => {
     it("It should create a new movie entry", (done) => {
+      let movie = new Movie({
+        username: "Chris",
+        name: "Doctor Strange in the Multiverse of Madness",
+        genre: "horror",
+        release_date: 05,
+        status: true,
+      });
+      movie.save();
       chai
         .request(server)
         .post("/tracker/form")
@@ -84,7 +92,7 @@ describe("app.js API", () => {
           res.body.should.have.property("status").eq(true);
         });
       done();
-      console.log(movie);
+      // console.log(movie);
     });
   });
 
@@ -115,7 +123,7 @@ describe("app.js API", () => {
           res.body.should.have.property("release_date").eq(05);
           res.body.should.have.property("status").eq(false);
         });
-      console.log(updated_movie);
+      // console.log(updated_movie);
     });
   });
 
