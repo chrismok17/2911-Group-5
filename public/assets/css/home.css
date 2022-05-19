@@ -181,7 +181,7 @@ form {
 
 /* add padding to github link logo to center the text*/
 .githublink {
-  padding-left: 182px;
+  padding-left: 20%;
 }
 
 /* change placeholder text color from default light gray. */
@@ -234,4 +234,39 @@ h3 {
 
 .description {
   width: 65%;
+}
+
+@media all and (max-width:650px){
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navheading {
+    padding: 10px 0 20px 0;
+  }
+
+  .githublink {
+    padding: 0;
+  }
+
+  .logolink {
+    padding: 0;
+  }
+
+  .list-developers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-developers ul {
+    width: fit-content;
+    margin: 0;
+  }
+
+  h3 {
+    padding-bottom: 10px;
+  }
+
 }

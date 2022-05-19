@@ -71,15 +71,17 @@ main {
 
 h1 {
   font-size: var(--nav-text-size);
+  text-align: center;
 }
 
 h2 {
   font-size: var(--header-size);
+  text-align: center;
 }
 
 /* add padding to github link logo to center the text*/
 .githublink {
-  padding-left: 182px;
+  padding-left: 20%;
 }
 
 button {
@@ -178,4 +180,16 @@ tr:nth-child(even) {
   border-radius: 50%;
   border: 1px solid #ddd;
   text-align: center;
+}
+
+.logolink {
+  padding-right : 5%; 
+}
+
+h2 { 
+  padding-bottom: 3%;
+}
+
+h3 {
+  padding-top: 5%;
 }
