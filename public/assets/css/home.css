@@ -126,7 +126,7 @@ nav {
 
 main {
   /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
-  flex-grow: 1;
+  /* flex-grow: 1; */
 
   padding: 50px;
 
@@ -139,18 +139,22 @@ main {
 
 h1 {
   font-size: var(--nav-text-size);
+  text-align: center;
 }
 h2,
 h3 {
   font-size: var(--header-size);
+  text-align: center;
 }
 p {
   font-size: var(--text-size);
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  padding-bottom: 3.5%;
 }
 
 #usernameBoxAndBtn {
@@ -159,8 +163,11 @@ form {
 }
 
 #loginText {
-  padding: 10px 0 0 0;
+  padding-top: 2%;
   font-size: var(--small-text-size);
+  text-decoration: underline;
+  text-align: center;
+  text-decoration-color: grey;
 }
 
 #usernameBox {
@@ -196,9 +203,35 @@ button {
 }
 
 /* remove unordered list bullets */
-.developed-by-section ul {
-  margin: 20px 0;
+.list-developers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-developers ul {
+  margin: 20px;
   text-align: center;
-  list-style-type: none;
+  list-style-type: circle;
   font-size: var(--text-size);
+}
+
+li {
+  padding-bottom: 5px;
+}
+
+.logolink {
+  padding-right : 5%; 
+}
+
+h2 { 
+  padding-bottom: 3%;
+}
+
+h3 {
+  padding-top: 5%;
+}
+
+.description {
+  width: 65%;
 }
