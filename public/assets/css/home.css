@@ -122,7 +122,7 @@ nav {
   background-color: var(--nav-bg-color);
   color: var(--text-alternative);
   border-radius: 25px;
-  padding: 1%;
+  padding: 0.4%;
   margin: 1%;
 }
 
@@ -223,10 +223,10 @@ li {
 }
 
 .logolink {
-  padding-right : 5%; 
+  padding-right: 5%;
 }
 
-h2 { 
+h2 {
   padding-bottom: 3%;
 }
 
@@ -238,11 +238,10 @@ h3 {
   width: 65%;
 }
 
-@media only screen and (max-width:480px){
-
+@media only screen and (max-width: 480px) {
   body {
     min-width: 450px;
-  } 
+  }
 
   main {
     padding: 5% 3% 3% 3%;
