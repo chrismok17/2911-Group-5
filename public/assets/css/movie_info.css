@@ -132,3 +132,15 @@ button {
     display: flex;
     justify-content: flex-end;
 }
+
+
+/* 3 Column Containers: Title Column, About Column and Plot Column*/
+.title_column{
+    line-height:2.5vw;
+}
+.about_column{
+    padding: 0 3vw 16vw 3vw; 
+}
+.plot_column{
+    width:80vw;
+}
