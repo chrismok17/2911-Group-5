@@ -37,7 +37,7 @@
     <main>
       <div class="title_row">
         <h1>Your Current Watchlist: <%= username%> [Movies:<%= movies.length%>]</h1>
-        <input type="text" id="searchbar" onkeyup="search()" placeholder="Search...">
+        <input type="text" id="searchbar" onkeyup="search()" placeholder="Search in watchlist...">
         <form action="/tracker/form/<%=username%>" method="GET">
           <button type="submit">Add Movie</button>
         </form>
