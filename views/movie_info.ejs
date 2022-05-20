@@ -14,7 +14,7 @@
 
 
   <body class="dark-theme">
-    
+
     <nav>
       <div class="logolink">
         <a href="/"
@@ -35,10 +35,16 @@
 
     <main>
       <!-- This is a canel button that returns to the previous page -->
-      <form action="/tracker/view" class="hidden_forms" method="POST">
-        <input type="hidden" name="username" value="<%=username%>" />
-        <button id="cancel_btn" type="submit">Go Back</button>
-      </form>
+
+
+      <div class="cancel_btn_container">
+        <form action="/tracker/view" class="hidden_forms" method="POST">
+          <input type="hidden" name="username" value="<%=username%>" />
+          <button id="cancel_btn" type="submit">Go Back</button>
+        </form>
+      </div>
+
+
       <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
       alt="poster of movie lol">
 
