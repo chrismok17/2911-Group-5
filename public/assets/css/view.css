@@ -55,7 +55,7 @@ nav {
   background-color: var(--nav-bg-color);
   color: var(--text-alternative);
   border-radius: 25px;
-  padding: 1%;
+  padding: 0.4%;
   margin: 1%;
 }
 
@@ -193,10 +193,10 @@ tr:nth-child(even) {
 }
 
 .logolink {
-  padding-right : 5%; 
+  padding-right: 5%;
 }
 
-h2 { 
+h2 {
   padding-bottom: 3%;
 }
 
@@ -204,12 +204,10 @@ h3 {
   padding-top: 5%;
 }
 
-
-@media only screen and (max-width:480px){
-
+@media only screen and (max-width: 480px) {
   body {
     min-width: 450px;
-  } 
+  }
 
   nav {
     flex-wrap: wrap;
@@ -254,5 +252,24 @@ h3 {
   .table_row_odd {
     height: 25vh;
   }
+}
 
+/* Search bar */
+
+#searchbar {
+  padding: 0.6%;
+  border-radius: 0.5rem;
+}
+
+#searchbar:focus {
+  background-color: #dddddd;
+}
+
+/* table header round */
+
+th:first-of-type {
+  border-top-left-radius: 1rem;
+}
+th:last-of-type {
+  border-top-right-radius: 1rem;
 }
