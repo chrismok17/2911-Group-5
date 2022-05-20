@@ -11,35 +11,60 @@
     <script type="text/javascript" src="/assets/scripts/search.js"></script>
     <title>Movie Info</title>
   </head>
-  <body>
-    <!-- This is a canel button that returns to the previous page -->
-    <form action="/tracker/view" class="hidden_forms" method="POST">
-      <input type="hidden" name="username" value="<%=username%>" />
-      <button id="cancel_btn" type="submit">Go Back</button>
-    </form>
-    <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
-    alt="poster of movie lol">
 
-    <!-- This is the start of the info, just shove everything into a table according to the mockup -->
-    <h1>Movie info</h1>
 
-    <h2>Title: <%=data["Title"]%></h2>
-    <h3>Plot</h3>
-    <p><%=data["Plot"]%></p>
-    <h3>Release date: <%=data["Released"]%></h3>
-    <h3>Genre: <%=data["Genre"]%></h3>
-    <h3>Runtime: <%=data["Runtime"]%></h3>
-    <h3>Directors: <%=data["Director"]%></h3>
-    <h3>Actors: <%=data["Actors"]%></h3>
-    <h3>Awards: <%=data["Awards"]%></h3>
-    <h3>Ratings</h3>
-    <h3>Box Office: <%=data["BoxOffice"]%></h3>
-    <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
-    <% for(var i=0; i < data["Ratings"].length; i++) { %>
-    <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
-    <% } %> <% } else{ %>
-    <h1>Movie not found</h1>
-    <% } %>
-    <!-- end of for loop -->
+  <body class="dark-theme">
+    
+    <nav>
+      <div class="logolink">
+        <a href="/"
+          ><img src="/assets/images/logo.png" alt="MovieTracker Logo"
+        /></a>
+      </div>
+      <div class="navheading">
+        <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
+      </div>
+      <div class="githublink">
+        <a href="https://github.com/chrismok17/2911-Group-5" target="_blank"
+          ><img
+            src="/assets/images/GitHubLogo.png"
+            alt="GitHub Repository Logo and Link"
+        /></a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- This is a canel button that returns to the previous page -->
+      <form action="/tracker/view" class="hidden_forms" method="POST">
+        <input type="hidden" name="username" value="<%=username%>" />
+        <button id="cancel_btn" type="submit">Go Back</button>
+      </form>
+      <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
+      alt="poster of movie lol">
+
+      <!-- This is the start of the info, just shove everything into a table according to the mockup -->
+      <h1>Movie info</h1>
+
+      <h2>Title: <%=data["Title"]%></h2>
+      <h3>Plot</h3>
+      <p><%=data["Plot"]%></p>
+      <h3>Release date: <%=data["Released"]%></h3>
+      <h3>Genre: <%=data["Genre"]%></h3>
+      <h3>Runtime: <%=data["Runtime"]%></h3>
+      <h3>Directors: <%=data["Director"]%></h3>
+      <h3>Actors: <%=data["Actors"]%></h3>
+      <h3>Awards: <%=data["Awards"]%></h3>
+      <h3>Ratings</h3>
+      <h3>Box Office: <%=data["BoxOffice"]%></h3>
+      <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
+      <% for(var i=0; i < data["Ratings"].length; i++) { %>
+      <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
+      <% } %> <% } else{ %>
+      <h1>Movie not found</h1>
+      <% } %>
+      <!-- end of for loop -->
+    </main>
   </body>
+
+
 </html>
