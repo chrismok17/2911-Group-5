@@ -47,7 +47,7 @@
       <!-- Where the movie info's contained -->
       <div class="movie_info_container">
 
-        <!-- 1st Column from the left (Title Column) -->
+        <!-- 1st Column: Left Column (Title Column) -->
         <div class="title_column">
           <div class="title_header">
             <h2><%=data["Title"]%></h2>
@@ -70,17 +70,22 @@
 
 
 
-
+        <!--2nd Column: Middle Column (About Column) -->
+        <div class="about_column">
+          <div class="about_header">
+            <h2>About</h2>
+          </div> 
+            <h3>Genre: <span><%=data["Genre"]%></span></h3>
+            <h3>Release date: <span><%=data["Released"]%></span></h3>           
+            <h3>Runtime: <span><%=data["Runtime"]%></span></h3>         
+            <h3>Directors: <span><%=data["Director"]%></span></h3>       
+            <h3>Actors: <span><%=data["Actors"]%></span></h3>
+            <h3>Awards: <span><%=data["Awards"]%></span></h3>    
+            <h3>Box Office: <span><%=data["BoxOffice"]%></span></h3>
+        </div>
      
         <h3>Plot</h3>
         <p><%=data["Plot"]%></p>
-        <h3>Release date: <%=data["Released"]%></h3>
-        <h3>Genre: <%=data["Genre"]%></h3>
-        <h3>Runtime: <%=data["Runtime"]%></h3>
-        <h3>Directors: <%=data["Director"]%></h3>
-        <h3>Actors: <%=data["Actors"]%></h3>
-        <h3>Awards: <%=data["Awards"]%></h3>
-        <h3>Box Office: <%=data["BoxOffice"]%></h3>
  
 
       </div>
