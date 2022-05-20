@@ -253,3 +253,23 @@ h3 {
     height: 25vh;
   }
 }
+
+/* Search bar */
+
+#searchbar {
+  padding: 0.6%;
+  border-radius: 0.5rem;
+}
+
+#searchbar:focus {
+  background-color: #dddddd;
+}
+
+/* table header round */
+
+th:first-of-type {
+  border-top-left-radius: 1rem;
+}
+th:last-of-type {
+  border-top-right-radius: 1rem;
+}
