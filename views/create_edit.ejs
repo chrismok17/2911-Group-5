@@ -52,6 +52,7 @@
             class="input_boxes"
             type="text"
             value="<%=name%>"
+            maxlength="30"
           />
         </div>
         <div class="form_rows">
@@ -62,15 +63,17 @@
             class="input_boxes"
             type="text"
             value="<%=genre%>"
+            maxlength="10"
           />
         </div>
         <div class="form_rows">
-          <p>Release Date:</p>
+          <p>Release Year:</p>
           <input
             required
             name="release_date"
             class="input_boxes"
             type="text"
+            maxlength="4"
             value="<%=release_date%>"
           />
         </div>
@@ -81,9 +84,7 @@
             <option value="false">No</option>
           </select>
         </div>
-        <div class="form_rows">
-          <!-- this empty p element is here so that the submit button ends up being on the right end of the page (using flex space-between) -->
-          <p></p>
+        <div class="form_rows_last">
           <button type="submit">Submit</button>
         </div>
       </form>

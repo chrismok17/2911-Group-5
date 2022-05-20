@@ -103,7 +103,9 @@
 body {
   background-color: var(--bg-color);
   color: var(--text);
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  min-width: 545px;
   font-family: "Roboto", sans-serif;
 
   /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
@@ -119,16 +121,16 @@ nav {
 
   background-color: var(--nav-bg-color);
   color: var(--text-alternative);
-  border-radius: 15px;
-  padding: 5px;
-  margin: 10px;
+  border-radius: 25px;
+  padding: 1%;
+  margin: 1%;
 }
 
 main {
   /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
   /* flex-grow: 1; */
 
-  padding: 50px;
+  padding: 5%;
 
   /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
   display: flex;
@@ -236,23 +238,30 @@ h3 {
   width: 65%;
 }
 
-@media all and (max-width:650px){
+@media only screen and (max-width:480px){
+
+  body {
+    min-width: 450px;
+  } 
 
   nav {
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .navheading {
-    padding: 10px 0 20px 0;
+    padding: 10px 0 5px 0;
+    order: 3;
   }
 
   .githublink {
     padding: 0;
+    order: 2;
   }
 
   .logolink {
     padding: 0;
+    order: 1;
   }
 
   .list-developers {
