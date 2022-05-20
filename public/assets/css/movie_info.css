@@ -1,1 +1,35 @@
 /* css for movie info page */
+:root {
+    --platinum: #e9ebea;
+    --arctic-lime: #d2ff00;
+    --bitter-lime: #b3f700;
+    --lime-green: #00c41f;
+    --eerie-black: #13181b;
+    --silver: #c4c4c4;
+  
+    --nav-text-size: 1.4rem;
+    --text-size: 1.2rem;
+    --header-size: 1.7rem;
+    --small-text-size: 0.9rem;
+}
+  
+  /* highlights */
+::selection {
+    color: rgb(0, 0, 0);
+    background: #b3f700;
+}
+  
+/*The use of this class and colors stored in variables ensures our ability to switch between color themes in the future.*/
+.dark-theme {
+    --bg-color: var(--eerie-black);
+    --nav-bg-color: var(--bitter-lime);
+    --text: var(--platinum);
+    --text-alternative: var(--eerie-black);
+}
+
+/* This catch-all at the beginning removes all default margin and padding spacings to allow for maximum customizability later. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
