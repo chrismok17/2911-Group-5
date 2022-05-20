@@ -45,3 +45,16 @@ body {
     flex-direction: column;
 }
 
+
+nav {
+    /* using flexbox to align the navbar items in a horizontal line with even spaces inbetween */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    background-color: var(--nav-bg-color);
+    color: var(--text-alternative);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+}
