@@ -23,13 +23,13 @@ describe("Testing Mongo connections", () => {
   describe("Bad entry", () => {
     it("This entry is bad but we caught the error", () => {
       function bad_entry() {
-        const badMovie = new Movie({
+        const badMovie = {
           username: 55,
           name: 45,
           genre: 33,
           release_date: "bruh",
           status: "kekw",
-        });
+        };
 
         const good_entry = {
           username: String,
