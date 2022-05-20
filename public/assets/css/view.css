@@ -36,7 +36,9 @@
 body {
   background-color: var(--bg-color);
   color: var(--text);
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  min-width: 545px;
   font-family: "Roboto", sans-serif;
 
   /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
@@ -52,16 +54,16 @@ nav {
 
   background-color: var(--nav-bg-color);
   color: var(--text-alternative);
-  border-radius: 15px;
-  padding: 5px;
-  margin: 10px;
+  border-radius: 25px;
+  padding: 1%;
+  margin: 1%;
 }
 
 main {
   /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
-  flex-grow: 1;
+  /* flex-grow: 1; */
 
-  padding: 50px;
+  padding: 5% 3% 3% 3%;
 
   /* this use of flexbox allows us to center all the headers, paragraphs and forms. */
   display: flex;
@@ -71,15 +73,25 @@ main {
 
 h1 {
   font-size: var(--nav-text-size);
+  text-align: center;
+}
+
+.title_row > h1 {
+  width: 40%;
 }
 
 h2 {
   font-size: var(--header-size);
+  text-align: center;
 }
 
 /* add padding to github link logo to center the text*/
 .githublink {
-  padding-left: 182px;
+  padding-left: 20%;
+}
+
+.title_row form {
+  height: 60%;
 }
 
 button {
@@ -98,18 +110,17 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 65vw;
-  padding: 0 0 20px 0;
+  padding-bottom: 20px;
 }
 
 table {
   text-align: center;
-  width: 65vw;
+  width: 90%;
   border-collapse: collapse;
 }
 
 table tr {
-  height: 5vh;
+  height: 3rem;
 }
 
 table button {
@@ -156,7 +167,8 @@ tr:nth-child(even) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  align-content: center;
+  padding-top: 0.7rem;
 }
 
 /* .watched and .unwatched corresponds to the status of movie */
@@ -178,4 +190,69 @@ tr:nth-child(even) {
   border-radius: 50%;
   border: 1px solid #ddd;
   text-align: center;
+}
+
+.logolink {
+  padding-right : 5%; 
+}
+
+h2 { 
+  padding-bottom: 3%;
+}
+
+h3 {
+  padding-top: 5%;
+}
+
+
+@media only screen and (max-width:480px){
+
+  body {
+    min-width: 450px;
+  } 
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navheading {
+    padding: 10px 0 5px 0;
+    order: 3;
+  }
+
+  .githublink {
+    padding: 0;
+    order: 2;
+  }
+
+  .logolink {
+    padding: 0;
+    order: 1;
+  }
+
+  .title_row {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .title_row > h1 {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  .action_buttons_container {
+    flex-direction: column;
+    height: 25vh;
+    justify-content: space-evenly;
+  }
+
+  .table_row_odd {
+    height: 25vh;
+  }
+
 }
