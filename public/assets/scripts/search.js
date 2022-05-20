@@ -16,10 +16,10 @@ function search() {
             }
             else {
                 tablerow[i].style.display = "none";
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};
 
 function sort(column) {
     let table,
@@ -50,16 +50,18 @@ function sort(column) {
         one from current row and one from the next:*/
         x = rows[i].getElementsByTagName("td")[column];
         y = rows[i + 1].getElementsByTagName("td")[column];
+        let watched = document.getElementsByClassName("watched")
+        let unwatched = document.getElementsByClassName("unwatched")
         /*check if the two rows should switch place,
         based on the direction, asc or desc:*/
         if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() || parseInt(x.innerHTML > parseInt(y.innerHTML))){
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() || parseInt(x.innerHTML > parseInt(y.innerHTML)) || watched > unwatched){
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
           }
         } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() || parseInt(x.innerHTML > parseInt(y.innerHTML))) {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() || parseInt(x.innerHTML < parseInt(y.innerHTML)) || watched < unwatched) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
