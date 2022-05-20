@@ -70,3 +70,38 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
+
+h1 {
+    font-size: var(--nav-text-size);
+}
+  
+h2 {
+    font-size: var(--header-size);
+}
+h3 {
+    padding-bottom:30px;
+}
+
+span{
+    font-size: var(--text-size);
+    font-weight: normal;
+}
+
+  
+  /* add padding to github link logo to center the text*/
+.githublink {
+    padding-left: 182px;
+}
+  
+button {
+    margin: 0 0 0 10px;
+    background-color: var(--bitter-lime);
+    border: none;
+    color: var(--text-alternative);
+    padding: 12px 60px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1rem;
+}
