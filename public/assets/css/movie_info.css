@@ -117,3 +117,11 @@ button {
     width: 85vw;
     padding-bottom: 10px;
 }
+
+.movie_image{
+    border-style: solid;
+    border-color: var(--arctic-lime);
+
+    width: fit-content;
+    height: fit-content;
+}
