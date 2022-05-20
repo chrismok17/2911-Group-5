@@ -33,3 +33,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+
+    /* using flexbox here in the column direction allows us to use the flex-grow attribute on the main element to enforce proper use of space. This will be especially helpful if/when we wish to implement a footer that is stickied to the bottom of the visible screen. */
+    display: flex;
+    flex-direction: column;
+}
+
