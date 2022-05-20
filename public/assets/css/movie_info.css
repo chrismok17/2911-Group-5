@@ -144,3 +144,21 @@ button {
 .plot_column{
     width:80vw;
 }
+
+
+/* Title Headers positions*/
+.title_header{
+    padding-bottom: 2vw;
+    
+    display: flex;
+    justify-content: center;
+}
+.about_header{
+    padding-bottom:4vw;
+
+    display: flex;
+    justify-content: center;
+}
+.plot_header{
+    padding-bottom: 4vw;
+}
