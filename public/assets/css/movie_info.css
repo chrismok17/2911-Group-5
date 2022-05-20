@@ -105,3 +105,15 @@ button {
     border-radius: 15px;
     font-size: 1rem;
 }
+
+
+
+.movie_info_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 85vw;
+    padding-bottom: 10px;
+}
