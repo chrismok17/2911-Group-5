@@ -44,31 +44,46 @@
         </form>
       </div>
 
+      <!-- Where the movie info's contained -->
+      <div class="movie_info_container">
 
-      <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
-      alt="poster of movie lol">
+        <!-- 1st Column from the left (Title Column) -->
+        <div class="title_column">
+          <div class="title_header">
+            <h2><%=data["Title"]%></h2>
+            </div>
 
-      <!-- This is the start of the info, just shove everything into a table according to the mockup -->
-      <h1>Movie info</h1>
+          <div class="movie_image">
+            <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
+            alt="poster of movie lol">  
+          </div>
+              
+          <h3>Ratings:</h3>
+          <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
+          <% for(var i=0; i < data["Ratings"].length; i++) { %>
+          <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
+          <% } %> <% } else{ %>
+          <h1>Movie not found</h1>
+          <% } %>
+          <!-- end of for loop --> 
+        </div> 
 
-      <h2>Title: <%=data["Title"]%></h2>
-      <h3>Plot</h3>
-      <p><%=data["Plot"]%></p>
-      <h3>Release date: <%=data["Released"]%></h3>
-      <h3>Genre: <%=data["Genre"]%></h3>
-      <h3>Runtime: <%=data["Runtime"]%></h3>
-      <h3>Directors: <%=data["Director"]%></h3>
-      <h3>Actors: <%=data["Actors"]%></h3>
-      <h3>Awards: <%=data["Awards"]%></h3>
-      <h3>Ratings</h3>
-      <h3>Box Office: <%=data["BoxOffice"]%></h3>
-      <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
-      <% for(var i=0; i < data["Ratings"].length; i++) { %>
-      <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
-      <% } %> <% } else{ %>
-      <h1>Movie not found</h1>
-      <% } %>
-      <!-- end of for loop -->
+
+
+
+     
+        <h3>Plot</h3>
+        <p><%=data["Plot"]%></p>
+        <h3>Release date: <%=data["Released"]%></h3>
+        <h3>Genre: <%=data["Genre"]%></h3>
+        <h3>Runtime: <%=data["Runtime"]%></h3>
+        <h3>Directors: <%=data["Director"]%></h3>
+        <h3>Actors: <%=data["Actors"]%></h3>
+        <h3>Awards: <%=data["Awards"]%></h3>
+        <h3>Box Office: <%=data["BoxOffice"]%></h3>
+ 
+
+      </div>
     </main>
   </body>
 
