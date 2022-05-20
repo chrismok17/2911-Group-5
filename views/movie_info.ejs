@@ -4,38 +4,98 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/assets/css/movie_info.css" type="text/css">
+    <script type="text/javascript" src="/assets/scripts/search.js"></script>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <title>Movie Info</title>
   </head>
-  <body>
-    <!-- This is a canel button that returns to the previous page -->
-    <form action="/tracker/view" class="hidden_forms" method="POST">
-      <input type="hidden" name="username" value="<%=username%>" />
-      <button id="cancel_btn" type="submit">Go Back</button>
-    </form>
-    <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
-    alt="poster of movie lol">
 
-    <!-- This is the start of the info, just shove everything into a table according to the mockup -->
-    <h1>Movie info</h1>
 
-    <h2>Title: <%=data["Title"]%></h2>
-    <h3>Plot</h3>
-    <p><%=data["Plot"]%></p>
-    <h3>Release date: <%=data["Released"]%></h3>
-    <h3>Genre: <%=data["Genre"]%></h3>
-    <h3>Runtime: <%=data["Runtime"]%></h3>
-    <h3>Directors: <%=data["Director"]%></h3>
-    <h3>Actors: <%=data["Actors"]%></h3>
-    <h3>Awards: <%=data["Awards"]%></h3>
-    <h3>Ratings</h3>
-    <h3>Box Office: <%=data["BoxOffice"]%></h3>
-    <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
-    <% for(var i=0; i < data["Ratings"].length; i++) { %>
-    <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
-    <% } %> <% } else{ %>
-    <h1>Movie not found</h1>
-    <% } %>
-    <!-- end of for loop -->
+  <body class="dark-theme">
+
+    <nav>
+      <div class="logolink">
+        <a href="/"
+          ><img src="/assets/images/logo.png" alt="MovieTracker Logo"
+        /></a>
+      </div>
+      <div class="navheading">
+        <h1>BCIT Computing, Spring 2022, ACIT 2911</h1>
+      </div>
+      <div class="githublink">
+        <a href="https://github.com/chrismok17/2911-Group-5" target="_blank"
+          ><img
+            src="/assets/images/GitHubLogo.png"
+            alt="GitHub Repository Logo and Link"
+        /></a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- This is a canel button that returns to the previous page -->
+
+
+      <div class="cancel_btn_container">
+        <form action="/tracker/view" class="hidden_forms" method="POST">
+          <input type="hidden" name="username" value="<%=username%>" />
+          <button id="cancel_btn" type="submit">Go Back</button>
+        </form>
+      </div>
+
+      <!-- Where the movie info's contained -->
+      <div class="movie_info_container">
+
+        <!-- 1st Column: Left Column (Title Column) -->
+        <div class="title_column">
+          <div class="title_header">
+            <h2><%=data["Title"]%></h2>
+            </div>
+
+          <div class="movie_image">
+            <% if(data["Response"] == 'True'){ %> <img src="<%=data["Poster"]%>"
+            alt="poster of movie lol">  
+          </div>
+              
+          <h3>Ratings:</h3>
+          <!-- A for loop to display all the ratings,treat this as one data field, it should usually print 3 entries  -->
+          <% for(var i=0; i < data["Ratings"].length; i++) { %>
+          <p><%= data["Ratings"][i]["Source"]%>: <%= data["Ratings"][i]["Value"]%></p>
+          <% } %> <% } else{ %>
+          <h1>Movie not found</h1>
+          <% } %>
+          <!-- end of for loop --> 
+        </div> 
+
+
+
+        <!--2nd Column: Middle Column (About Column) -->
+        <div class="about_column">
+          <div class="about_header">
+            <h2>About</h2>
+          </div> 
+            <h3>Genre: <span><%=data["Genre"]%></span></h3>
+            <h3>Release date: <span><%=data["Released"]%></span></h3>           
+            <h3>Runtime: <span><%=data["Runtime"]%></span></h3>         
+            <h3>Directors: <span><%=data["Director"]%></span></h3>       
+            <h3>Actors: <span><%=data["Actors"]%></span></h3>
+            <h3>Awards: <span><%=data["Awards"]%></span></h3>    
+            <h3>Box Office: <span><%=data["BoxOffice"]%></span></h3>
+        </div>
+     
+        <!-- 3rd Column: Right Column (Plot Column) -->
+        <div class="plot_column">
+          <div class="plot_header">
+            <h2>Plot</h2>
+          </div>
+          <p><%=data["Plot"]%></p>
+        </div>
+
+      </div>
+    </main>
   </body>
+
+
 </html>
