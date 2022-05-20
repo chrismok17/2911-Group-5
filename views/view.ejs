@@ -12,7 +12,8 @@
     />
     <link rel="stylesheet" href="/assets/css/view.css" type="text/css">
     <script type="text/javascript" src="/assets/scripts/search.js"></script>
-    <title>View</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <title><%=username %>'s' Movies</title>
   </head>
 
   <body class="dark-theme">
@@ -36,17 +37,17 @@
     <main>
       <div class="title_row">
         <h1>Your Current Watchlist: <%= username%> [Movies:<%= movies.length%>]</h1>
-        <input type="text" id="searchbar" onkeyup="search()" placeholder="Search...">
+        <input type="text" id="searchbar" onkeyup="search()" placeholder="Search in watchlist...">
         <form action="/tracker/form/<%=username%>" method="GET">
           <button type="submit">Add Movie</button>
         </form>
       </div>
       <table id="viewtable">
         <tr id="table_header_row">
-          <th>Name</th>
-          <th>Genre</th>
-          <th>Release Date</th>
-          <th>Status</th>
+          <th onclick="sort(0)">Name</th>
+          <th onclick="sort(1)">Genre</th>
+          <th onclick="sort(2)">Release Year</th>
+          <th onclick="sort(3)">Status</th>
           <th>Actions</th>
         </tr>
         <% for(var i=0; i < movies.length; i++) { %>
