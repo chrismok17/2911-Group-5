@@ -247,6 +247,7 @@ h3 {
     flex-direction: column;
     height: 25vh;
     justify-content: space-evenly;
+    padding: 0;
   }
 
   .table_row_odd {
