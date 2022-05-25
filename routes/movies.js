@@ -11,13 +11,16 @@ const Movie = require("../models/Movie");
 const { response } = require("../app");
 const res = require("express/lib/response");
 
+// =========================================================
 // here lies the space that the login function used to live
+//                  REST IN PEACE
+// =========================================================
 
-// to handle data
+// to parse data from reqs
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-// same as get request for view, shows table of data
+// renders the view ejs page
 router.post("/view", async (req, res) => {
   let user_movies = await Movie.find({ username: req.body.username });
   // res.json(user_movies);
@@ -97,6 +100,7 @@ async function new_movie(req, res) {
   res.render("view", { movies: movies, username: req.body.username });
 }
 
+// fetches data from an external API to get movie info
 async function movie_info(formatted_name, year) {
   const response = await fetch(
     `http://www.omdbapi.com/?apikey=8f5f081b&t=${formatted_name}&y=${year}&plot=full`
@@ -119,11 +123,13 @@ router.post("/info", async (req, res) => {
   let username = req.body.username;
   let movie_year = req.body.year;
 
-  // data
+  // movie info page, renders the movie_info ejs page with the data received from API func
   res.render("movie_info", {
     data: await movie_info(formatted_name, movie_year),
     username: username,
   });
 });
+
+// export the router to be used in app.js
 
 module.exports = router;

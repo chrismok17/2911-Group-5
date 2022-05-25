@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Tell app to use /public for all assets including css and images
-app.use(express.static(__dirname + "/public"))
+app.use(express.static(__dirname + "/public"));
 
 // use ejs
 app.set("view engine", "ejs");
@@ -32,6 +32,7 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+// use router for all routes that start with "tracker"
 MovieRouter = require("./routes/movies");
 app.use("/tracker", MovieRouter);
 
