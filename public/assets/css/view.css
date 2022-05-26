@@ -138,6 +138,16 @@ table button {
 .delete_button {
   background-color: rgb(203, 65, 65);
 }
+/* Hover Effects for table headers */
+table th{
+  transition: all 0.3s;
+}
+table th:hover{
+  text-shadow: 0 1px 10px var(--arctic-lime);
+  color: var(--arctic-lime);
+  background-color: var(--eerie-black);
+  box-shadow: 5px 5px 10px var(--eerie-black);
+}
 
 #table_header_row {
   background-color: var(--bitter-lime);
