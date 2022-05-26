@@ -148,9 +148,55 @@ button {
   padding: 16px 50px;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 25px;
   font-size: 1rem;
+  transition: all 0.2s ease-in-out;
 }
+
+button:hover,button:active{
+  text-shadow: 0 1px 10px var(--arctic-lime);
+  color: var(--arctic-lime);
+  background-color: var(--eerie-black);
+  box-shadow: 1px 1px 5px 2px var(--arctic-lime);
+  border-radius: 5px;
+}
+/* Hover Effects for cancel button */
+#cancel_btn {
+  background-color: rgb(203, 65, 65);
+  transition: all 0.2s ease-in-out;
+}
+
+#cancel_btn:hover,.delete_button:active{
+  text-shadow: 0 1px 5px rgb(203, 65, 65);
+  color: red;
+  background-color: var(--eerie-black);
+  box-shadow: 1px 1px 5px 2px red;
+}
+
+/* Input Animation */
+input:focus {
+	animation: glow 800ms ease-out infinite alternate;
+	border-color: var(--arctic-lime);
+	color: var(--arctic-lime);
+	outline: none;
+}
+@keyframes glow {
+  0% {
+  border-color: var(--eerie-black);
+  box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+  }	
+  100% {
+  border-color: var(--arctic-lime);
+  box-shadow: 0 0 20px var(--arctic-lime), inset 0 0 10px var(--arctic-lime), 0 2px 0 #000;
+  }
+}
+
+
+
+
+
+
+
 
 #yes_checkbox_round,
 #no_checkbox_round {
@@ -170,10 +216,6 @@ button {
   background-color: var(--lime-green);
 }
 #no_checkbox_round:checked {
-  background-color: rgb(234, 67, 67);
-}
-
-#cancel_btn {
   background-color: rgb(234, 67, 67);
 }
 
