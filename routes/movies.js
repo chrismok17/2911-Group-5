@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 // express router
 const router = express.Router();
 
-// the schema
+// the schema stuff
 const Movie = require("../models/Movie");
 const { response } = require("../app");
 const res = require("express/lib/response");
