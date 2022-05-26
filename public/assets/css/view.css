@@ -104,6 +104,13 @@ button {
   cursor: pointer;
   border-radius: 15px;
   font-size: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+button:hover{
+  text-shadow: 0 1px 10px var(--arctic-lime);
+  color: var(--arctic-lime);
+  background-color: var(--eerie-black);
+  box-shadow: 1px 1px 5px 2px var(--arctic-lime);
 }
 
 .title_row {
@@ -135,8 +142,28 @@ table button {
   font-size: 1rem;
 }
 
+/* Hover Effects for edit buttons */
 .delete_button {
   background-color: rgb(203, 65, 65);
+  transition: all 0.4s ease-in-out;
+}
+
+.delete_button:hover{
+  text-shadow: 0 1px 5px rgb(203, 65, 65);
+  color: red;
+  background-color: var(--eerie-black);
+  box-shadow: 1px 1px 5px 2px red;
+
+}
+/* Hover Effects for table headers */
+table th{
+  transition: all 0.4s ease-in-out;
+}
+table th:hover{
+  text-shadow: 0 1px 10px var(--arctic-lime);
+  color: var(--arctic-lime);
+  background-color: var(--eerie-black);
+  box-shadow: 2px 5px 5px 3px var(--eerie-black);
 }
 
 #table_header_row {
