@@ -6,7 +6,7 @@
   "scripts": {
     "TStart": "nodemon app.js",
     "start": "node app.js",
-    "test": "nyc mocha --exit"
+    "test": "nyc mocha --exit --timeout 10000"
   },
   "repository": {
     "type": "git",

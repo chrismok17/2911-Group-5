@@ -26,14 +26,11 @@ app.listen(port, () => {
 });
 
 // Connect to Mongo
-// mongoose.connect(process.env.DB_CONNECTION);
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error(err));
+mongoose.connect(process.env.DB_CONNECTION);
 const db = mongoose.connection;
-// db.once("open", () => {
-//   console.log("Connected to MongoDB");
-// });
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
 
 // use router for all routes that start with "tracker"
 MovieRouter = require("./routes/movies");
