@@ -104,7 +104,7 @@ button {
   cursor: pointer;
   border-radius: 15px;
   font-size: 1rem;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 button:hover{
   text-shadow: 0 1px 10px var(--arctic-lime);
@@ -145,7 +145,7 @@ table button {
 /* Hover Effects for edit buttons */
 .delete_button {
   background-color: rgb(203, 65, 65);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .delete_button:hover{
@@ -157,7 +157,7 @@ table button {
 }
 /* Hover Effects for table headers */
 table th{
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 table th:hover{
   text-shadow: 0 1px 10px var(--arctic-lime);
