@@ -1,11 +1,17 @@
+// Search and filter function on user's list of movies
 function search() {
+    // Define variables, grab the search input and table tobe filtered
     let input, filter, table, tablerow, i;
     input = document.getElementById("searchbar");
     filter = input.value.toUpperCase();
     table = document.getElementById("viewtable");
     tablerow = table.getElementsByTagName("tr");
 
+    // Loops through all the table rows and compares the input with the table content
+    // If they match, keep the row (movie) in table
+    // If they do not match, remove the row
     for (i = 0; i < tablerow.length; i++) {
+        // Define these variables by grabbing the columns that can be searched: Title, Genre, Date, Status
         let movie_name = tablerow[i].getElementsByTagName("td")[0];
         let movie_genre = tablerow[i].getElementsByTagName("td")[1]
         let movie_date = tablerow[i].getElementsByTagName("td")[2]
@@ -21,6 +27,7 @@ function search() {
     };
 };
 
+// Sort function that when table header is clicked, will sort the column data alphabetically or reversed
 function sort(column) {
     let table,
       rows,
@@ -33,51 +40,53 @@ function sort(column) {
       switchcount = 0;
     table = document.getElementById("viewtable");
     switching = true;
-    //Set the sorting direction to ascending:
+    // Set default sort direction to "ascending"
     dir = "asc";
-    /*Make a loop that will continue until
-    no switching has been done:*/
+    
+    // Create a while loop that will continue until no sort switching can be done
     while (switching) {
-      //start by saying: no switching is done:
+      // Switching is false on default; loop will not exit
       switching = false;
       rows = table.getElementsByTagName("tr");
-      /*Loop through all table rows (except the
-      first, which contains table headers):*/
-      for (i = 1; i < rows.length - 1; i++) { //Change i=0 if you have the header th a separate table.
-        //start by saying there should be no switching:
+      
+      // Loops through all the table rows
+      for (i = 1; i < rows.length - 1; i++) { 
         shouldSwitch = false;
-        /*Get the two elements you want to compare,
-        one from current row and one from the next:*/
+        
+        // Grabs the rows by column clicked
         x = rows[i].getElementsByTagName("td")[column];
         y = rows[i + 1].getElementsByTagName("td")[column];
         let watched = document.getElementsByClassName("watched")
         let unwatched = document.getElementsByClassName("unwatched")
-        /*check if the two rows should switch place,
-        based on the direction, asc or desc:*/
+        
+        // Compare each row if they should be sorted alphabetically or numerically in ascending order
         if (dir == "asc") {
           if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() || parseInt(x.innerHTML > parseInt(y.innerHTML)) || watched > unwatched){
-            //if so, mark as a switch and break the loop:
+            
+            // If they do switch, move to next row
             shouldSwitch = true;
             break;
           }
+
+          // Compare each row in descending order
         } else if (dir == "desc") {
           if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() || parseInt(x.innerHTML < parseInt(y.innerHTML)) || watched < unwatched) {
-            //if so, mark as a switch and break the loop:
+
+            // If they do switch, move to next row
             shouldSwitch = true;
             break;
           }
         }
       }
       if (shouldSwitch) {
-        /*If a switch has been marked, make the switch
-        and mark that a switch has been done:*/
+        // If a switch has been marked, make the switch and mark that a switch has been done
         rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
         switching = true;
-        //Each time a switch is done, increase this count by 1:
+
+        // Increase switch count by 1 each time a switch occurs
         switchcount++;
       } else {
-        /*If no switching has been done AND the direction is "asc",
-        set the direction to "desc" and run the while loop again.*/
+        // If no switching has been done AND the direction is "asc", set the direction to "desc" and run the while loop again
         if (switchcount == 0 && dir == "asc") {
           dir = "desc";
           switching = true;
