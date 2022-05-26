@@ -94,6 +94,7 @@ h2 {
   height: 60%;
 }
 
+/* Button Animation */
 button {
   margin: 0 0 0 10px;
   background-color: var(--bitter-lime);
@@ -104,14 +105,18 @@ button {
   cursor: pointer;
   border-radius: 15px;
   font-size: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-button:hover{
+button:hover,button:active{
   text-shadow: 0 1px 10px var(--arctic-lime);
   color: var(--arctic-lime);
   background-color: var(--eerie-black);
   box-shadow: 1px 1px 5px 2px var(--arctic-lime);
+  border-radius: 5px;
 }
+
+
+
 
 .title_row {
   display: flex;
@@ -142,22 +147,24 @@ table button {
   font-size: 1rem;
 }
 
-/* Hover Effects for edit buttons */
+/* Hover Effects for Delete buttons */
 .delete_button {
   background-color: rgb(203, 65, 65);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.delete_button:hover{
+.delete_button:hover,.delete_button:active{
   text-shadow: 0 1px 5px rgb(203, 65, 65);
   color: red;
   background-color: var(--eerie-black);
   box-shadow: 1px 1px 5px 2px red;
-
 }
+
+
+
 /* Hover Effects for table headers */
 table th{
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 table th:hover{
   text-shadow: 0 1px 10px var(--arctic-lime);
@@ -166,12 +173,15 @@ table th:hover{
   box-shadow: 2px 5px 5px 3px var(--eerie-black);
 }
 
+
 #table_header_row {
   background-color: var(--bitter-lime);
   color: var(--eerie-black);
   font-size: large;
   font-weight: bold;
 }
+
+
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -230,6 +240,45 @@ h2 {
 h3 {
   padding-top: 5%;
 }
+
+
+
+/* Background Animation */
+.bg {
+  animation:slide 75s ease-in-out infinite alternate;
+  background-image: linear-gradient(-20deg, #000 50%, var(--bitter-lime) 50%);
+  bottom:0;
+  left:-100%;
+  opacity:.2;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:50s;
+}
+
+.bg3 {
+  animation-duration:25s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+/* Background animaton ends here*/
+
+
+
+
+
 
 @media only screen and (max-width: 480px) {
   body {
