@@ -169,6 +169,7 @@ table th:hover{
   color: var(--arctic-lime);
   background-color: var(--eerie-black);
   box-shadow: 2px 5px 5px 3px var(--eerie-black);
+  cursor: pointer;
 }
 
 
