@@ -218,34 +218,29 @@ button {
 /* End fancy for submit */
 
 /* Input Animation */
-input{
-  border:none;
-
+input {
+  border: none;
 }
 input:focus {
-	animation: glow 800ms ease-out infinite alternate;
-	border-color: var(--arctic-lime);
-	color: var(--arctic-lime);
-	outline: none;
+  animation: glow 800ms ease-out infinite alternate;
+  border-color: var(--arctic-lime);
+  color: var(--arctic-lime);
+  outline: none;
 }
 
 @keyframes glow {
   0% {
-  border-color: var(--eerie-black);
-  box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 1px 0 #000;
-  }	
+    border-color: var(--eerie-black);
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 1px 0 #000;
+  }
   100% {
-  border-color: var(--arctic-lime);
-  box-shadow: 0 0 20px var(--arctic-lime), inset 0 0 10px var(--arctic-lime), 0 1px 0 #000;
+    border-color: var(--arctic-lime);
+    box-shadow: 0 0 20px var(--arctic-lime), inset 0 0 10px var(--arctic-lime),
+      0 1px 0 #000;
   }
 }
 /* Input Animation End */
-
-
-
-
-
-
 
 #yes_checkbox_round,
 #no_checkbox_round {
@@ -284,45 +279,37 @@ input:focus {
   padding: 20px 0;
 }
 
-
-
-
 /* Background Animation */
 .bg {
-  animation:slide 75s ease-in-out infinite alternate;
+  animation: slide 75s ease-in-out infinite alternate;
   background-image: linear-gradient(-20deg, #000 50%, var(--bitter-lime) 50%);
-  bottom:0;
-  left:-100%;
-  opacity:.2;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+  bottom: 0;
+  left: -100%;
+  opacity: 0.2;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
 }
 
 .bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:50s;
+  animation-direction: alternate-reverse;
+  animation-duration: 50s;
 }
 
 .bg3 {
-  animation-duration:25s;
+  animation-duration: 25s;
 }
 
 @keyframes slide {
   0% {
-    transform:translateX(-25%);
+    transform: translateX(-25%);
   }
   100% {
-    transform:translateX(25%);
+    transform: translateX(25%);
   }
 }
 /* Background animaton ends here*/
-
-
-
-
-
 
 @media only screen and (max-width: 480px) {
   body {

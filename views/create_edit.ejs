@@ -16,14 +16,11 @@
   </head>
 
   <body class="dark-theme">
-
     <!-- Background animation -->
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <!-- end -->
-
-
 
     <nav>
       <div class="logolink">
@@ -54,7 +51,7 @@
         <input type="hidden" name="username" value="<%=username%>" />
         <input type="hidden" name="id" value="<%=id%>" />
         <div class="form_rows">
-          <p>Name:</p>
+          <p>Movie Name:</p>
           <input
             required
             name="name"
@@ -72,7 +69,7 @@
             class="input_boxes"
             type="text"
             value="<%=genre%>"
-            maxlength="10"
+            maxlength="15"
           />
         </div>
         <div class="form_rows">
@@ -81,8 +78,8 @@
             required
             name="release_date"
             class="input_boxes"
-            type="text"
-            maxlength="4"
+            type="number"
+            max="2069"
             value="<%=release_date%>"
           />
         </div>
