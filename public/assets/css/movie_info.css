@@ -140,12 +140,11 @@ button {
 }
 
 /* 3 Column Containers: Title Column, About Column and Plot Column*/
-.title_column {
-  line-height: 3vw;
-}
+
 .about_column {
   padding: 0 3.5% 15% 3.5%;
 }
+
 .plot_column {
   width: 80vw;
 }
