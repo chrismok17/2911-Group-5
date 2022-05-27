@@ -60,8 +60,6 @@ nav {
 }
 
 main {
-  /* this flex-grow ensures that the main element uses up all available space in the body. This way, if in the future we add a footer element to the home.html body element, it will be positioned at the bottom instead of just underneath the last element inside the main element. */
-  /* flex-grow: 1; */
 
   padding: 5% 3% 3% 3%;
 
